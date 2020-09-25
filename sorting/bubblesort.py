@@ -9,15 +9,7 @@ def bubble_sort(array):
                 array[i] = array[i+1]
                 array[i+1] = temp
                 has_swapped = True
-
-
             i += 1
-
-
-
-
-
-
 array = [1,3,5,2,4]
 bubble_sort((array))
 print(array)
