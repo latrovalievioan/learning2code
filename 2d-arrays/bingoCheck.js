@@ -1,6 +1,6 @@
 function bingoCheck(board) {
-  let regexRows = new RegExp("x".repeat(board[0].length));
-  let regexCols = new RegExp("x".repeat(board.length));
+  let regexRows = RegExp(`x{${board[0].length}}`);
+  let regexCols = RegExp(`x{${board.length}}`);
   let countDiag = 0;
   for (let i = 0, j = 0; i < board.length; i++, j++) {
     if (regexRows.test(board[i].join(""))) {

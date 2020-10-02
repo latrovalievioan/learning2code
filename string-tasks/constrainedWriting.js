@@ -1,18 +1,14 @@
 function constraint(txt) {
   let letters = {};
   txt = txt
-    .replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "")
+    .replace(/[^a-z\s]/gi, "")
     .replace(/\s+/g, " ")
     .toLowerCase();
-  for (let j = 0; j < txt.length; j++) {
-    if (txt[j] !== " ") {
-      letters[txt[j]] = 0;
-    }
-  }
   for (let i = 0; i < txt.length; i++) {
     if (txt[i] !== " ") {
-      letters[txt[i]] += 1;
+      letters[txt[i]] = 0;
     }
+    letters[txt[i]]++;
     if (Object.keys(letters).length === 26) {
       return "Pangram";
     }

@@ -12,6 +12,7 @@ function alphaClash(str_A, ind_A, str_Z, ind_Z) {
   }
   str_A = str_A.filter((a) => a != " ").join("");
   str_Z = str_Z.filter((a) => a != " ").join("");
+  console.log(str_A, str_Z);
   for (let j = 0; j < str_Z.length; j++) {
     let charCodeA = str_A.charCodeAt(j);
     let charCodeZ = str_Z.charCodeAt(j);
