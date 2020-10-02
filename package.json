@@ -1,0 +1,45 @@
+{
+  "name": "learning2code",
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0"
+  },
+  "scripts": {
+    "lint-staged": "lint-staged",
+    "eslint": "eslint"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "npm run eslint"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 6,
+      "ecmaFeatures": {
+          "jsx": true
+      }
+    },
+    "extends": ["eslint:recommended"],
+    "rules": {
+      "semi": "error",
+      "prefer-const": "error",
+      "no-template-curly-in-string": "warn",
+      "array-callback-return": "error",
+      "default-param-last": "warn",
+      "no-lone-blocks": "error",
+      "no-new-wrappers": "error",
+      "prefer-regex-literals": "error",
+      "no-shadow": "error",
+      "no-use-before-define": "error",
+      "max-len": ["error", { "code": 80 }]
+    }
+  }
+}
