@@ -1,5 +1,5 @@
 function constraint(txt) {
-  let letters = {};
+  const letters = {};
   txt = txt
     .replace(/[^a-z\s]/gi, "")
     .replace(/\s+/g, " ")
@@ -22,7 +22,7 @@ function constraint(txt) {
   if (areUnique) {
     return "Heterogram";
   }
-  let arr = txt.split(" ");
+  const arr = txt.split(" ");
   let isTautoGram = true;
   for (let y = 0; y < arr.length; y++) {
     if (arr[y][0] !== arr[0][0]) {
@@ -32,18 +32,18 @@ function constraint(txt) {
   if (isTautoGram) {
     return "Tautogram";
   }
-  let txtArray = txt.split(" ");
+  const txtArray = txt.split(" ");
   let arrayNoRepeat = [];
   for (let q = 0; q < txtArray.length; q++) {
-    let currentObj = {};
+    const currentObj = {};
     for (let c = 0; c < txtArray[q].length; c++) {
-      let element = txtArray[q][c];
+      const element = txtArray[q][c];
       currentObj[element] = 0;
     }
     arrayNoRepeat.push(Object.keys(currentObj));
   }
   arrayNoRepeat = arrayNoRepeat.flat(Infinity);
-  let objNoRepeat = {};
+  const objNoRepeat = {};
   for (let u = 0; u < arrayNoRepeat.length; u++) {
     objNoRepeat[arrayNoRepeat[u]] = 0;
   }
