@@ -1,7 +1,7 @@
 function hangman(phrase, arr) {
-    let result = ''
+    let result = '';
     const regex = RegExp(arr.join('|') + '| ', 'si');
-    const regexAlphabetical = /^[A-Z]+$/i
+    const regexAlphabetical = /^[A-Z]+$/i;
     for(let i = 0; i < phrase.length; i++){
         result += ((regex.test(phrase[i]) && arr.length > 0) 
         || !regexAlphabetical.test(phrase[i]))
