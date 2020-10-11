@@ -21,7 +21,7 @@ for (let i = 0, x = 1; i < input.length; i++) {
   }
 }
 for (let j = 0, x = 0; j < arrayOfAll.length / 2; j += 2, x++) {
-  result[x] = arrayOfAll[j] + arrayOfAll[j + 1];
+  result[x] = arrayOfAll[j].trim() +" "+ arrayOfAll[j + 1].trim();
 }
 
 console.log(result.join("\n"));
