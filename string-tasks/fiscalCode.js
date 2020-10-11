@@ -14,7 +14,7 @@ const months = {
 };
 
 function fiscalCode(person) {
-  let result = [];
+  const result = [];
   result[0] = [];
   result[1] = [];
   const vowels = /a|e|i|o|u/gi;
@@ -36,7 +36,6 @@ function fiscalCode(person) {
   }
   //secound three
   if (person.name.replace(vowels, "").length > 3) {
-    console.log(person.name.replace(vowels, ""));
     result[1] += person.name.replace(vowels, "")[0].toUpperCase();
     result[1] += person.name.replace(vowels, "")[2].toUpperCase();
     result[1] += person.name.replace(vowels, "")[3].toUpperCase();
