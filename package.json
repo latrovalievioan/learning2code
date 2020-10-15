@@ -24,10 +24,12 @@
     "parserOptions": {
       "ecmaVersion": 6,
       "ecmaFeatures": {
-          "jsx": true
+        "jsx": true
       }
     },
-    "extends": ["eslint:recommended"],
+    "extends": [
+      "eslint:recommended"
+    ],
     "rules": {
       "semi": "error",
       "prefer-const": "error",
@@ -39,7 +41,12 @@
       "prefer-regex-literals": "error",
       "no-shadow": "error",
       "no-use-before-define": "error",
-      "max-len": ["error", { "code": 80 }]
+      "max-len": [
+        "error",
+        {
+          "code": 80
+        }
+      ]
     }
   }
 }

@@ -16,4 +16,4 @@ function firstRepeat(chars) {
     }
     return '-1'
 }
-console.log(firstRepeat("egolas"))
+console.log(firstRepeat("legolas"))

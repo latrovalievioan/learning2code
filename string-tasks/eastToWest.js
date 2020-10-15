@@ -7,4 +7,4 @@ function direction(arr) {
     });
     return result;
 }
-console.log(direction(["east", "EAST", "eastEAST"]))
+console.log(direction(["east", "E A S T", "eastEA- S T"]))
