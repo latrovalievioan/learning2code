@@ -1,0 +1,12 @@
+{
+    "player 1": {
+        "stalker": 52,
+        "zealot": 22,
+        "immortal": 21
+    },
+    "player 0": {
+        "hellion": 17,
+        "ghost": 42,
+        "marine": 28
+    }
+}

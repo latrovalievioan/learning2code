@@ -1,0 +1,19 @@
+{
+    "player 2": {
+        "ghost": 4
+    },
+    "player 0": {
+        "roach": 10
+    },
+    "player 4": {
+        "ghost": 8
+    },
+    "player 1": {
+        "hellion": 4
+    },
+    "player 3": {
+        "immortal": 6,
+        "zealot": 9,
+        "stalker": 4
+    }
+}

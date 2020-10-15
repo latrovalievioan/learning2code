@@ -1,0 +1,2 @@
+player 7 builds 10 zerglings
+player 7 loses a zergling

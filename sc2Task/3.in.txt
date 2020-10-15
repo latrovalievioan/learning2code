@@ -1,0 +1,15 @@
+player 2 builds a ghost
+player 4 builds 4 roachs
+player 6 builds 4 roachs
+player 4 builds 2 hydras
+player 1 builds 4 roachs
+player 6 builds a roach
+player 3 builds 4 roachs
+player 3 builds 3 zerglings
+player 0 builds 3 marines
+player 3 builds 3 roachs
+player 7 builds a hellion
+player 6 builds 3 roachs
+player 2 builds 4 hellions
+player 6 builds 4 roachs
+player 2 builds 3 hellions

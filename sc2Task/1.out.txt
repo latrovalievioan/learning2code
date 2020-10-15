@@ -1,0 +1,6 @@
+{
+    "player 0": {
+        "stalker": 6,
+        "immortal": 4
+    }
+}

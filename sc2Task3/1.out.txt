@@ -1,0 +1,48 @@
+{
+    "0": {
+        "ghost": 5,
+        "marine": 2
+    },
+    "1": {
+        "hydra": 1,
+        "roach": 2,
+        "zergling": 1
+    },
+    "2": {
+        "marine": 2,
+        "ghost": 2,
+        "hellion": 2
+    },
+    "3": {
+        "zergling": 3,
+        "hydra": 3,
+        "roach": 2
+    },
+    "4": {
+        "ghost": 1,
+        "marine": 1,
+        "hellion": 3
+    },
+    "5": {
+        "roach": 3,
+        "hydra": 5,
+        "zergling": 1
+    },
+    "6": {
+        "roach": 9,
+        "hydra": 0
+    },
+    "7": {
+        "stalker": 7,
+        "immortal": 3,
+        "zealot": 3
+    },
+    "8": {
+        "roach": 3,
+        "zergling": 4
+    },
+    "9": {
+        "roach": 4,
+        "zergling": 6
+    }
+}

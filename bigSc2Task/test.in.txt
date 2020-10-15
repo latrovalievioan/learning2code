@@ -1,0 +1,26 @@
+zergling costs 86 minerals and 0 vespene
+roach costs 128 minerals and 30 vespene
+hydra costs 145 minerals and 102 vespene
+zealot costs 114 minerals and 0 vespene
+stalker costs 123 minerals and 51 vespene
+immortal costs 363 minerals and 188 vespene
+marine costs 60 minerals and 0 vespene
+tank costs 134 minerals and 172 vespene
+ghost costs 204 minerals and 149 vespene
+player 0 gathers 650 minerals
+player 0 gathers 645 vespene
+player 0 gathers 219 vespene
+player 0 builds 1 roach
+player 0 builds 5 hydras
+player 0 gathers 110 minerals
+player 0 builds 4 roachs
+player 0 gathers 230 vespene
+player 0 builds 4 roachs
+player 0 builds 3 zerglings
+player 0 builds 2 roachs
+player 0 gathers 230 vespene
+player 0 builds 5 hydras
+player 0 gathers 222 minerals
+player 0 gathers 248 vespene
+player 0 gathers 213 minerals
+player 0 builds 124135 roachs

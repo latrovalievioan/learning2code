@@ -1,0 +1,22 @@
+{
+    "0": {
+        "zealot": 6,
+        "stalker": 11,
+        "immortal": 3
+    },
+    "1": {
+        "stalker": 7,
+        "immortal": 0,
+        "zealot": 9
+    },
+    "2": {
+        "stalker": 11,
+        "zealot": 2,
+        "immortal": 4
+    },
+    "3": {
+        "hellion": 0,
+        "ghost": 3,
+        "marine": 1
+    }
+}

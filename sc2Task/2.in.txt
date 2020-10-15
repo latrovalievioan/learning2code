@@ -1,0 +1,13 @@
+player 2 builds a ghost
+player 0 builds a roach
+player 4 builds 4 ghosts
+player 4 builds 4 ghosts
+player 1 builds 4 hellions
+player 3 builds 3 immortals
+player 3 builds 4 zealots
+player 0 builds 5 roachs
+player 3 builds 3 immortals
+player 0 builds 4 roachs
+player 3 builds 5 zealots
+player 3 builds 4 stalkers
+player 2 builds 3 ghosts

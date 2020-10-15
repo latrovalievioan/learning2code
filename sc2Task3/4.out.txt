@@ -1,0 +1,10 @@
+{
+    "1": {
+        "zealot": 2,
+        "stalker": 0,
+        "immortal": 5
+    },
+    "2": {
+        "roach": 7
+    }
+}

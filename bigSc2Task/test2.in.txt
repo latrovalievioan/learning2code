@@ -1,0 +1,4 @@
+zergling costs 50 minerals and 0 vespene
+player 0 gathers 150 minerals
+player 0 builds 5 zerglings
+player 0 loses 2 zerglings

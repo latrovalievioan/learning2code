@@ -1,0 +1,31 @@
+{
+    "0": {
+        "marine": 4,
+        "ghost": 1
+    },
+    "1": {
+        "stalker": 6
+    },
+    "2": {
+        "roach": 3,
+        "zergling": 5
+    },
+    "3": {
+        "roach": 0
+    },
+    "4": {
+        "hydra": 1,
+        "roach": 5,
+        "zergling": 3
+    },
+    "6": {
+        "ghost": 7,
+        "marine": 2
+    },
+    "7": {
+        "zergling": 0
+    },
+    "8": {
+        "zergling": 3
+    }
+}

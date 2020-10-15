@@ -1,0 +1,6 @@
+player 1 builds 2 zealots
+player 1 builds 2 stalkers
+player 1 loses 2 stalkers
+player 2 builds 5 roachs
+player 1 builds 5 immortals
+player 2 builds 2 roachs

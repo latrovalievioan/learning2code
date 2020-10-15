@@ -1,0 +1,30 @@
+{
+    "0": {
+        "zealot": 4
+    },
+    "1": {
+        "roach": 16,
+        "hydra": 17,
+        "zergling": 3
+    },
+    "2": {
+        "immortal": 7,
+        "stalker": 2,
+        "zealot": 1
+    },
+    "3": {
+        "zergling": 3,
+        "roach": 8,
+        "hydra": 16
+    },
+    "4": {
+        "ghost": 8,
+        "hellion": 6,
+        "marine": 2
+    },
+    "5": {
+        "immortal": 0,
+        "zealot": 5,
+        "stalker": 3
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "player 8": {
+        "roach": 6,
+        "hydra": 2,
+        "zergling": 2
+    },
+    "player 1": {
+        "roach": 5,
+        "zergling": 5
+    },
+    "player 5": {
+        "stalker": 14
+    },
+    "player 7": {
+        "roach": 10,
+        "zergling": 3
+    },
+    "player 4": {
+        "hydra": 4
+    },
+    "player 6": {
+        "roach": 4
+    },
+    "player 9": {
+        "zergling": 1
+    },
+    "player 3": {
+        "ghost": 7
+    }
+}
