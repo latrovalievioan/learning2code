@@ -25,7 +25,7 @@
 //     }
 // }))
 
-const arr = [1,2,3,'24',23,35,'123124124',33,'34',6,'66']
+//const arr = [1,2,3,'24',23,35,'123124124',33,'34',6,'66']
 // console.log(arr.filter(n => typeof n === "number"))
 
-console.log(arr.filter(x => typeof x === 'string'))
+//console.log(arr.filter(x => typeof x === 'string'))
