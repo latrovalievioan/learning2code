@@ -21,6 +21,6 @@ const points = [
     { x: 19, y: 2 }
 ];
 
-const isInRadius = (points, r) => points.filter(p => p.x <= r && p.y <= r);
+const isInRadius = (points, r) => points.filter(p => Math.sqrt(p.x ** 2 + p.y ** 2) <= r);
 console.log(isInRadius(points,40));
 
