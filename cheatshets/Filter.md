@@ -6,7 +6,7 @@ Returns a new array with the elements that return true from the function passed.
 
 ```js
 const array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-console.log(array.filter((n) => (n % 2 = 0)));
+console.log(array.filter((n) => n % 2 === 0));
 ```
 
 ## Ex2. Return only capital letters
