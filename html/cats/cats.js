@@ -12,7 +12,6 @@ const cats = [
     {name: 'Mark', age: 15, imageUrl: 'https://i.pinimg.com/originals/15/cb/f1/15cbf1d43f0efaaf9c78a4b7d46a99bf.jpg'},
     {name: 'Oksana', age: 6, imageUrl: 'https://i0.wp.com/bp1.blogger.com/_FgL2FhJczTE/Rkc5sCdY8PI/AAAAAAAAAGw/F8qAIgizzBA/s320/CAIJOH2N.jpg'},
 ]
-
 const catsTable = `<table border="5px">${cats.map(cat => `<tr>${Object.values(cat).map((prop,i) => {
     if(/imageUrl/.test(Object.keys(cat)[i])){
         return `<td><img src="${prop}" width="100px" height="100px"></td>`
