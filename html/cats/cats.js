@@ -14,7 +14,7 @@ const cats = [
 ]
 const catsTable = `<table border="5px">${cats.map(cat => `<tr>${Object.values(cat).map((prop,i) => {
     if(/imageUrl/.test(Object.keys(cat)[i])){
-        return `<td><img src="${prop}" width="100px" height="100px"></td>`
+        return `<td><img src="${prop}" width="100px" height="100px"/></td>`
     }else{
         return `<td>${prop}</td>`
     }

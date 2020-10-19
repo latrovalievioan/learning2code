@@ -4,3 +4,4 @@ const input = require("fs") // required to work with the filesystem
   .trim()
   .split(/\r|\n/);
 
+  
