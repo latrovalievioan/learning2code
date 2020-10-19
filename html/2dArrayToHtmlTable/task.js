@@ -6,5 +6,5 @@ const matrix = [
     [55,66,77,88],
 ];
 
-const list = `<table>${matrix.map(row => `<tr>${row.map(col => `<td>${col}</td>`)}</tr>`)}</table>`
+const list = `<table>${matrix.map(row => `<tr>${row.map(col => `<td>${col}</td>`).join('')}</tr>`).join('')}</table>`
 console.log(list)

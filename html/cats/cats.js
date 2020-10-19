@@ -18,5 +18,5 @@ const catsTable = `<table border="5px">${cats.map(cat => `<tr>${Object.values(ca
     }else{
         return `<td>${prop}</td>`
     }
-})}</tr>`)}</table>`
-console.log(catsTable.replace(/,/g , ''))
+}).join('')}</tr>`).join('')}</table>`
+console.log(catsTable)
