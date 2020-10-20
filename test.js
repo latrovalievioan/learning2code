@@ -1,2 +1,2 @@
-const obj = {'Animal': {'Name' : 'dog', 'Eyes' : 2, 'Head' : 1, 'Paws' : 4 , 'Cute-face' : 1}}
-console.log(obj.Animal['Cute-face'])
+const els = [1, 2, 3, 4, 5, NaN, 124125115125, 2];
+console.log(els.every((el) => typeof el === "number"));
