@@ -71,4 +71,4 @@ function decomposeUrl(url) {
   return result;
 }
 
-console.log(decomposeUrl("filesLocal://jsfiddle.net/r5dq22dc/99/"));
+console.log(decomposeUrl("https://www.youtube.com/watch?v=3ZUQ7yZTFco"));

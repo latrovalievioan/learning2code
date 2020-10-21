@@ -1,0 +1,16 @@
+header {
+    color: cadetblue;
+}
+td:first-child {
+    font-style: italic;
+    color: green
+}
+tr {
+    color: gray
+}
+tr:nth-child(-n+2) , tr:nth-child(5){
+    color: yellow
+}
+tr:last-child {
+    color:orange;
+}
