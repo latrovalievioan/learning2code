@@ -1,0 +1,11 @@
+thead {
+    background-color: green;
+    color: white;
+    text-align: center;
+}
+tr:nth-child(2n + 2){
+    background-color: rgba(255, 218, 185, 0.336);
+}
+tbody {
+    text-align: center;
+}
