@@ -32,3 +32,5 @@ const els = [1, 2, 3, 4, 5, NaN, 124125115125, 2];
 console.log(els.every((el) => typeof el === "number"));
 // Returns true - every element is a number
 ```
+
+### Using .every() method on a empty array would return true because 0 elements pass the test implemented in the function, <br> and since we have 0 elements, that means that every element passes the test.

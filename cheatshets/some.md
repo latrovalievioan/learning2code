@@ -31,3 +31,5 @@ const arr = ["apple", "banana", "mango"];
 console.log(arr.some((fruit) => fruit === "mango"));
 //Returns true - we have mango in the array
 ```
+
+### When used on a empty element, .some() returns false, because there isn't at least one element to pass the test implemented in the function.
