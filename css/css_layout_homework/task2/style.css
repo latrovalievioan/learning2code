@@ -1,0 +1,28 @@
+:root {
+    background-color: rgb(190, 190, 190);
+}
+main, html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.Categories{
+    display: flex;
+    border: 3px solid purple;
+    flex-direction: column;
+    height: 80%;
+    width: 50%;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.Category {
+    background-color: whitesmoke;
+    border: 3px solid black;
+    display: flex;
+}
+
+img {
+    width: 150px;
+}
+
