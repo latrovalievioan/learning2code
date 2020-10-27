@@ -8,18 +8,26 @@ table{
     color: white;
     height: 50px;
 }
-[type='button'] {
+input[type='button'] {
     background-color: rgb(255, 16, 148);
     color: white;
     width: 100%;
     outline-style: none;
     
 }
-[type='button']:hover {
-    background-color: gray;
+input[type='button']:hover {
+    filter: brightness(85%);
     outline-style: none;
 }
 
-.lighter {
+input[type='button'].lighter {
+    background-color: rgb(247, 133, 152);
+}
+
+input[type='button'].lighter:hover {
     background-color: pink;
+}
+input[type="text"]{
+    text-align: right;
+    text-size-adjust: bottom;
 }
