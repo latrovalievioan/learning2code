@@ -1,0 +1,33 @@
+nav{    
+    width: 700px;
+    height: 100px;
+    display:flex;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(48,48,48,1) 45%);
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+}
+img {
+    width: 100px;
+    max-width: 100%;
+}
+.text{
+    font-size: 2em;
+}
+.button{
+    background: rgb(191,21,21);
+    background: radial-gradient(circle, rgba(191,21,21,1) 0%, rgba(94,14,14,1) 100%);
+    border: 0.5px solid peachpuff;
+    color: white;
+}
+main {
+    width: 700px;
+    height: 500px;
+    display:flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(48,48,48,1) 45%);
+    color: lightgray
+}
+h1 {
+    color: yellow;
+}
