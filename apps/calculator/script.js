@@ -13,7 +13,9 @@ buttons.forEach((button) =>
             document.getElementById("previous").innerHTML +
               document.getElementById("current").innerHTML
           ) + button.id;
+
         document.getElementById("current").innerHTML = "";
+        toEval = eval(toEval);
       }
     } else if (button.id === "=") {
       document.getElementById("current").innerHTML = eval(toEval);
