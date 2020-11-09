@@ -18,8 +18,19 @@ buttons.forEach((button) =>
         toEval = eval(toEval);
       }
     } else if (button.id === "=") {
+      if (eval(toEval) === 42) {
+        document.getElementById("previous").innerHTML =
+          "You have found the meaning of life!";
+      } else if (eval(toEval) === 666) {
+        document.getElementById("previous").innerHTML =
+          "Don't mess with the bad guy!";
+      } else if (eval(toEval) === 69) {
+        document.getElementById("previous").innerHTML = "Nasty!";
+      } else {
+        document.getElementById("previous").innerHTML = "";
+      }
       document.getElementById("current").innerHTML = eval(toEval);
-      document.getElementById("previous").innerHTML = "";
+
       toEval = eval(toEval);
     } else if (button.id === "AC") {
       toEval = "";
