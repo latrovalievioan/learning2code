@@ -1,49 +1,39 @@
 const buttons = Array.from(document.getElementsByTagName("button"));
+let prev = document.getElementById("previous");
+let current = document.getElementById("current");
 let toEval = "";
-let specialRegex = /special/gi;
 buttons.forEach((button) =>
   button.addEventListener("click", function () {
-    if (!specialRegex.test(button.className)) {
+    if (button.classList[0] !== "op") {
+      current.innerHTML += button.id;
       toEval += button.id;
-      if (button.className === "num") {
-        document.getElementById("current").innerHTML += button.id;
-      } else {
-        document.getElementById("previous").innerHTML =
-          eval(
-            document.getElementById("previous").innerHTML +
-              document.getElementById("current").innerHTML
-          ) + button.id;
-
-        document.getElementById("current").innerHTML = "";
-        toEval = eval(toEval);
-      }
-    } else if (button.id === "=") {
-      if (eval(toEval) === 42) {
-        document.getElementById("previous").innerHTML =
-          "You have found the meaning of life!";
-      } else if (eval(toEval) === 666) {
-        document.getElementById("previous").innerHTML =
-          "Don't mess with the bad guy!";
-      } else if (eval(toEval) === 69) {
-        document.getElementById("previous").innerHTML = "Nasty!";
-      } else {
-        document.getElementById("previous").innerHTML = "";
-      }
-      document.getElementById("current").innerHTML = eval(toEval);
-
-      toEval = eval(toEval);
-    } else if (button.id === "AC") {
-      toEval = "";
-      document.getElementById("current").innerHTML = "";
-      document.getElementById("previous").innerHTML = "";
-    } else if (button.id === "DEL") {
-      document.getElementById("current").innerHTML = document
-        .getElementById("current")
-        .innerHTML.substring(
+    } else {
+      if (button.classList[1] !== "special") {
+        if (!isNaN(Number(toEval[toEval.length - 1]))) {
+          toEval = eval(toEval);
+          toEval += button.id;
+          prev.innerHTML = toEval;
+          current.innerHTML = "";
+        } else {
+          toEval = toEval.substring(0, toEval.length - 1) + button.id;
+          prev.innerHTML = toEval;
+        }
+      } else if (button.id === "=") {
+        prev.innerHTML = "";
+        current.innerHTML = eval(toEval);
+      } else if (button.id === "AC") {
+        toEval = "";
+        prev.innerHTML = "";
+        current.innerHTML = "";
+      } else if (button.id === "DEL") {
+        current.innerHTML = current.innerHTML.substring(
           0,
-          document.getElementById("current").innerHTML.length - 1
+          current.innerHTML.length - 1
         );
-      toEval = toEval.substring(0, toEval.length - 1);
+        if (!isNaN(toEval[toEval.length - 1])) {
+          toEval = toEval.substr(0, toEval.length - 1);
+        }
+      }
     }
   })
 );
