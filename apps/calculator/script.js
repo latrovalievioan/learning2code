@@ -1,3 +1,21 @@
+function EQ(toEval) {
+  const regex1 = /\(/g;
+  const regex2 = /\)/g;
+  let diffBrackets;
+  if (toEval.match(regex1) !== null) {
+    if (toEval.match(regex2) === null) {
+      diffBrackets = toEval.match(regex1).length;
+    } else {
+      diffBrackets = toEval.match(regex1).length - toEval.match(regex2).length;
+    }
+
+    for (let i = 0; i < diffBrackets; i++) {
+      toEval += ")";
+    }
+  }
+  return toEval;
+}
+
 const buttons = Array.from(document.getElementsByTagName("button"));
 let prev = document.getElementById("previous");
 let current = document.getElementById("current");
@@ -5,8 +23,13 @@ let toEval = "";
 buttons.forEach((button) =>
   button.addEventListener("click", function () {
     if (button.classList[0] !== "op") {
-      current.innerHTML += button.id;
-      toEval += button.id;
+      if (button.id === "PI") {
+        current.innerHTML += Math.PI;
+        toEval += Math.PI;
+      } else {
+        current.innerHTML += button.id;
+        toEval += button.id;
+      }
     } else {
       if (button.classList[1] !== "special") {
         if (!isNaN(Number(toEval[toEval.length - 1]))) {
@@ -19,6 +42,7 @@ buttons.forEach((button) =>
           prev.innerHTML = toEval;
         }
       } else if (button.id === "=") {
+        toEval = EQ(toEval);
         prev.innerHTML = "";
         current.innerHTML = eval(toEval);
       } else if (button.id === "AC") {
@@ -37,3 +61,7 @@ buttons.forEach((button) =>
     }
   })
 );
+
+function show() {
+  document.getElementById("sidebar").classList.toggle("active");
+}

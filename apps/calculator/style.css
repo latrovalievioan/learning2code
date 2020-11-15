@@ -11,23 +11,24 @@ body {
     background: radial-gradient(circle, rgba(255,185,238,1) 0%, rgba(52,180,170,1) 100%);
 }
 
-.calculator {
-    display:grid;
+.calculator .main {
+    display: grid;
     justify-content: center;
     align-content: center;
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px,auto)repeat(5, 100px);
+    order: 2;
 }
 
-.calculator > button {
+.calculator  button {
     font-size: 2rem;
     border: 1px solid black;
     outline: none;
     background-color: rgba(255,255,255,.56);
 }
 
-.calculator > button:hover {
+.calculator  button:hover {
     background-color: rgba(255,255,255,.80);
 }
 
@@ -55,4 +56,40 @@ body {
 .output #current {
     color:  rgba(52,180,170,1);
     font-size: 2.5rem;
+}
+
+.calculator #sidebar .inside {
+    justify-content: center;
+    align-content: center;
+    grid-template-rows: repeat(7,  29.41%);
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sidebar {
+    order: 1;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 537px;
+    transition: .4s;
+}
+#sidebar .inside{
+    display: none;
+}
+
+#sidebar.active {
+    left: 437px;
+}
+
+#sidebar.active .inside {
+    display: grid;
+}
+
+#open {
+    height: 620px;
+    z-index: 3;
 }

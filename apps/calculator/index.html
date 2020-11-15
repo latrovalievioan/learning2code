@@ -8,28 +8,46 @@
 
 <body>
     <div class="calculator">
-        <div class="output">
-            <div id="previous"></div>
-            <div id="current"></div>
+
+        <div class="main">
+            <div class="output">
+                <div id="previous"></div>
+                <div id="current"></div>
+            </div>
+            <button id="AC" class="op special span2 ">AC</button>
+            <button class="op special" id="DEL">DEL</button>
+            <button class="op" id="/">÷</button>
+            <button class="num" id="1">1</button>
+            <button class="num" id="2">2</button>
+            <button class="num" id="3">3</button>
+            <button class="op" id="*">×</button>
+            <button class="num" id="4">4</button>
+            <button class="num" id="5">5</button>
+            <button class="num" id="6">6</button>
+            <button class="op" id="+">+</button>
+            <button class="num" id="7">7</button>
+            <button class="num" id="8">8</button>
+            <button class="num" id="9">9</button>
+            <button class="op" id="-">-</button>
+            <button class="num" id=".">.</button>
+            <button class="num" id="0">0</button>
+            <button id="=" class="op special span2">=</button>
         </div>
-        <button id="AC" class="span2 op special">AC</button>
-        <button class="op special" id="DEL">DEL</button>
-        <button class="op" id="/">÷</button>
-        <button class="num" id="1">1</button>
-        <button class="num" id="2">2</button>
-        <button class="num" id="3">3</button>
-        <button class="op" id="*">×</button>
-        <button class="num" id="4">4</button>
-        <button class="num" id="5">5</button>
-        <button class="num" id="6">6</button>
-        <button class="op" id="+">+</button>
-        <button class="num" id="7">7</button>
-        <button class="num" id="8">8</button>
-        <button class="num" id="9">9</button>
-        <button class="op" id="-">-</button>
-        <button class="num" id=".">.</button>
-        <button class="num" id="0">0</button>
-        <button id="=" class="span2 op special">=</button>
+        <div id="sidebar" class="toogle-btn">
+            <div id=" open/close">
+                <button id="open" class="op special" onclick="show()">
+                    < </button>
+            </div>
+            <div class="inside">
+                <button class="brackets" id="Math.sin(">sin(x)</button>
+                <button class="brackets" id="Math.cos(">cos(x)</button>
+                <button class="brackets" id="Math.log(">ln(x)</button>
+                <button class="brackets" id="Math.sqrt(">sqrt(x)</button>
+                <button id="PI">𝛑</button>
+                <button class="op" id="**">^</button>
+                <button class="op" id="%">mod</button>
+            </div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
