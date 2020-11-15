@@ -93,3 +93,16 @@ body {
     height: 620px;
     z-index: 3;
 }
+
+#formats {
+    position: absolute;
+    left: 200px;
+}
+#formats div {
+    display:block;
+    background-color: black;
+    color: white;
+    width:200px;
+    height:100px;
+    border: 1px solid white;
+}

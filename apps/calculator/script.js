@@ -16,9 +16,42 @@ function EQ(toEval) {
   return toEval;
 }
 
+const decToBinary = (num) => {
+  let result = "";
+  for (let i = num; i >= 1; i = Math.floor(i / 2)) {
+    result += `${i % 2}`;
+  }
+  return result.split("").reverse().join("");
+};
+
+const decToHex = (num) => {
+  let result = [];
+  for (let i = num, j = 0; i >= 1; i = Math.floor(i / 16), j++) {
+    result[j] = (i / 16 - Math.floor(i / 16)) * 16;
+  }
+  result = result.map((n) => {
+    if (n > 9 && n < 16) {
+      n = String.fromCharCode(n + 55);
+    }
+    return n;
+  });
+  return result.reverse().join("");
+};
+
+const decToOctal = (num) => {
+  let result = "";
+  for (let i = num; i >= 1; i = Math.floor(i / 8)) {
+    result += `${(i / 8 - Math.floor(i / 8)) * 8}`;
+  }
+  return result.split("").reverse().join("");
+};
+
 const buttons = Array.from(document.getElementsByTagName("button"));
-let prev = document.getElementById("previous");
-let current = document.getElementById("current");
+const prev = document.getElementById("previous");
+const current = document.getElementById("current");
+const hex = document.getElementById("hex");
+const oct = document.getElementById("oct");
+const bin = document.getElementById("bin");
 let toEval = "";
 buttons.forEach((button) =>
   button.addEventListener("click", function () {
@@ -45,6 +78,9 @@ buttons.forEach((button) =>
         toEval = EQ(toEval);
         prev.innerHTML = "";
         current.innerHTML = eval(toEval);
+        hex.innerHTML = decToHex(Number(current.innerHTML));
+        oct.innerHTML = decToOctal(Number(current.innerHTML));
+        bin.innerHTML = decToBinary(Number(current.innerHTML));
       } else if (button.id === "AC") {
         toEval = "";
         prev.innerHTML = "";
