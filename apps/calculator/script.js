@@ -28,13 +28,10 @@ const decToHex = (num) => {
   let result = [];
   for (let i = num, j = 0; i >= 1; i = Math.floor(i / 16), j++) {
     result[j] = (i / 16 - Math.floor(i / 16)) * 16;
-  }
-  result = result.map((n) => {
-    if (n > 9 && n < 16) {
-      n = String.fromCharCode(n + 55);
+    if (result[j] > 9 && result[j] < 16) {
+      result[j] = String.fromCharCode(result[j] + 55);
     }
-    return n;
-  });
+  }
   return result.reverse().join("");
 };
 
@@ -56,31 +53,33 @@ let toEval = "";
 buttons.forEach((button) =>
   button.addEventListener("click", function () {
     if (button.classList[0] !== "op") {
-      if (button.id === "PI") {
+      if (button.getAttribute("data-num") === "PI") {
         current.innerHTML += Math.PI;
         toEval += Math.PI;
       } else {
-        current.innerHTML += button.id;
-        toEval += button.id;
+        current.innerHTML += button.getAttribute("data-num");
+        toEval += button.getAttribute("data-num");
       }
     } else {
       if (button.classList[1] !== "special") {
         if (!isNaN(Number(toEval[toEval.length - 1]))) {
           toEval = eval(toEval);
-          toEval += button.id;
+          toEval += button.getAttribute("data-op");
           prev.innerHTML = toEval;
           current.innerHTML = "";
         } else {
-          toEval = toEval.substring(0, toEval.length - 1) + button.id;
+          toEval =
+            toEval.substring(0, toEval.length - 1) +
+            button.getAttribute("data-num");
           prev.innerHTML = toEval;
         }
-      } else if (button.id === "=") {
+      } else if (button.getAttribute("data-op") === "=") {
         toEval = EQ(toEval);
         prev.innerHTML = "";
         current.innerHTML = eval(toEval);
-        hex.innerHTML = decToHex(Number(current.innerHTML));
-        oct.innerHTML = decToOctal(Number(current.innerHTML));
-        bin.innerHTML = decToBinary(Number(current.innerHTML));
+        hex.value = decToHex(Number(current.innerHTML));
+        oct.value = decToOctal(Number(current.innerHTML));
+        bin.value = decToBinary(Number(current.innerHTML));
       } else if (button.id === "AC") {
         toEval = "";
         prev.innerHTML = "";
@@ -98,6 +97,14 @@ buttons.forEach((button) =>
   })
 );
 
-function show() {
-  document.getElementById("sidebar").classList.toggle("active");
+function show(event) {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.classList.toggle("active");
+  if (sidebar.classList.contains("active")) {
+    event.target.innerHTML = "►";
+  } else {
+    event.target.innerHTML = "◄";
+  }
 }
+
+document.getElementById("open").addEventListener("click", show);

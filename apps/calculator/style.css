@@ -98,11 +98,15 @@ body {
     position: absolute;
     left: 200px;
 }
-#formats div {
+#formats .num-sys-format {
     display:block;
     background-color: black;
     color: white;
     width:200px;
     height:100px;
     border: 1px solid white;
+}
+
+.calculator #open {
+    font-size : 1.2rem;
 }
