@@ -1,5 +1,5 @@
 const binarySearch = (arr, num, left = 0, right = arr.length - 1) => {
-  let midPoint = Math.floor((right - left) / 2 + left);
+  const midPoint = Math.floor((right - left) / 2 + left);
   switch (true) {
     case arr[midPoint] === num:
       return midPoint;
