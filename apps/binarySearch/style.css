@@ -1,0 +1,80 @@
+:root {
+    background: rgb(34,193,195);
+    background: linear-gradient(97deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+}
+
+div#bin-search-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+div#bin-search-1 {
+    width: 40%;
+    margin: 0;
+    position: absolute;
+    left: 30%;
+    display: flex;
+    align-items: center;
+    top: 50%;
+}
+
+
+#Array {
+    background-color: rgba(0,0,0,.85);
+    color: white;
+    font-family: cursive;
+    display: block;
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    padding-right: 0px;
+}
+
+input#input, button#start{
+    background-color: #141C13;
+    border: 1px solid white;
+    color: white;
+    font-family: cursive;
+    text-align: right;
+}
+
+button#start:hover {
+    cursor: pointer;
+    background-color: #141c1365;
+}
+
+h1 {
+    text-align: center;
+    font-family: cursive;
+    font-size: 3em;
+    margin-top: 3em;
+}
+
+ol {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    padding: 7px;
+}
+
+ol li{
+    text-align: center;
+    margin: 7px;
+}
+
+ol .middle {
+    background-color: rgb(159 56 56);
+}
+
+ol .found {
+    background-color: rgb(86 158 75 / 78%);
+}
+
+ol .left {
+    border-left: 2px solid red;
+}
+
+ol .right {
+    border-right: 2px solid red;
+}
