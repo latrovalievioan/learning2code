@@ -1,5 +1,6 @@
 const bubbleSortVisualise = (containerId, arr) => {
   const container = document.getElementById(containerId);
+  container.classList.add("container");
   const frag = document.createDocumentFragment();
   const div = document.createElement("div");
   div.setAttribute("class", "Array");
@@ -13,9 +14,14 @@ const bubbleSortVisualise = (containerId, arr) => {
     ul.appendChild(li);
     return li;
   });
+  const divLog = document.createElement("div");
+  divLog.setAttribute("class", "log");
+
   div.appendChild(ul);
+  frag.appendChild(divLog);
   frag.appendChild(div);
   frag.appendChild(button);
+
   container.appendChild(frag);
   //////////////////////////////////
   //////////////////////////////////
@@ -23,6 +29,7 @@ const bubbleSortVisualise = (containerId, arr) => {
   //////////////////////////////////
   let swapCounter = 0;
   const swap = (arr, x, y, temp = lis[x].innerHTML) => {
+    divLog.innerHTML = `Swapped ${lis[x].innerHTML} with ${lis[y].innerHTML}!`;
     arr[x].innerHTML = arr[y].innerHTML;
     arr[y].innerHTML = temp;
     swapCounter += 1;
@@ -31,18 +38,29 @@ const bubbleSortVisualise = (containerId, arr) => {
   let checked = false;
 
   const toCheck = () => {
+    divLog.innerHTML = `Comparing ${lis[i].innerHTML} with ${
+      lis[i + 1].innerHTML
+    }...`;
     lis[i].classList = "toCheck";
-    lis[i + 1].classList = "toCheck";
+    if (lis[i + 1] !== undefined) {
+      lis[i + 1].classList = "toCheck";
+    }
     checked = true;
-    lis[i - 1].classList = "";
+    if (lis[i - 1] !== undefined) {
+      lis[i - 1].classList = "";
+    }
   };
   const clickhandle = () => {
+    if (button.innerText === "Reset") {
+      location.reload();
+    }
     button.innerText = "Next";
     if (i === lis.length - 1) {
       if (swapCounter === 0) {
         lis.forEach((li) => (li.classList = "toCheck"));
-        button.innerText = "Array is Sorted";
-        button.disabled = true;
+        button.innerText = "Reset";
+        divLog.innerText = "Array is Sorted!";
+        checked = true;
       } else {
         lis[lis.length - 1].classList = "";
         lis[lis.length - 2].classList = "";
@@ -57,6 +75,7 @@ const bubbleSortVisualise = (containerId, arr) => {
       checked = false;
       i += 1;
     } else {
+      divLog.innerText = "No need for swap!";
       checked = false;
       i += 1;
     }

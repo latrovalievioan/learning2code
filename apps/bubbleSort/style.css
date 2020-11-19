@@ -17,7 +17,7 @@ header {
     margin-top: 5%;
 }
 
-div#bubble-sort {
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -54,6 +54,7 @@ button.step {
     width: 136px;
     border: 1px solid white;
     border-radius: 29px;
+    outline: none;
 }
 
 button.step:hover {
@@ -76,4 +77,18 @@ h2 {
     font-family: cursive;
     font-size: 26px;
     margin: 10px;
+}
+
+.log {
+    background-color: black;
+    width: 300px;
+    height: 35px;
+    border: 2px solid white;
+    border-radius: 13px;
+    color:  green;
+    font-family: cursive;
+    text-align: center;
+    box-sizing:border-box;
+    padding: 2px;
+
 }
