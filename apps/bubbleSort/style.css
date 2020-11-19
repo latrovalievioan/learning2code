@@ -19,10 +19,12 @@ header {
 
 .container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
     margin-top: 5%;
+    align-items: center;
+    position: absolute;
+    top: 12em;
+    left: 17em;
 }
 
 ul {
@@ -55,6 +57,7 @@ button.step {
     border: 1px solid white;
     border-radius: 29px;
     outline: none;
+    margin-top: 1em;
 }
 
 button.step:hover {
@@ -82,13 +85,22 @@ h2 {
 .log {
     background-color: black;
     width: 300px;
-    height: 35px;
+    height: 300px;
     border: 2px solid white;
-    border-radius: 13px;
-    color:  green;
-    font-family: cursive;
-    text-align: center;
-    box-sizing:border-box;
-    padding: 2px;
+    border-radius: 5px;
+    color: yellow;
+    font-family: monospace;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-top: 8px;
+    overflow: auto;
+    margin: 2em;
+}
 
+.bigDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

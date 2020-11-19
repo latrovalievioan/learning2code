@@ -14,13 +14,16 @@ const bubbleSortVisualise = (containerId, arr) => {
     ul.appendChild(li);
     return li;
   });
+  const bigDiv = document.createElement("div");
+  bigDiv.setAttribute("class", "bigDiv");
   const divLog = document.createElement("div");
   divLog.setAttribute("class", "log");
 
   div.appendChild(ul);
+  bigDiv.appendChild(div);
+  bigDiv.appendChild(button);
   frag.appendChild(divLog);
-  frag.appendChild(div);
-  frag.appendChild(button);
+  frag.appendChild(bigDiv);
 
   container.appendChild(frag);
   //////////////////////////////////
@@ -29,7 +32,7 @@ const bubbleSortVisualise = (containerId, arr) => {
   //////////////////////////////////
   let swapCounter = 0;
   const swap = (arr, x, y, temp = lis[x].innerHTML) => {
-    divLog.innerHTML = `Swapped ${lis[x].innerHTML} with ${lis[y].innerHTML}!`;
+    divLog.innerHTML += `Swapped ${lis[x].innerHTML} with ${lis[y].innerHTML}! <br>`;
     arr[x].innerHTML = arr[y].innerHTML;
     arr[y].innerHTML = temp;
     swapCounter += 1;
@@ -38,9 +41,9 @@ const bubbleSortVisualise = (containerId, arr) => {
   let checked = false;
 
   const toCheck = () => {
-    divLog.innerHTML = `Comparing ${lis[i].innerHTML} with ${
+    divLog.innerHTML += `Comparing ${lis[i].innerHTML} with ${
       lis[i + 1].innerHTML
-    }...`;
+    }... <br>`;
     lis[i].classList = "toCheck";
     if (lis[i + 1] !== undefined) {
       lis[i + 1].classList = "toCheck";
@@ -59,7 +62,7 @@ const bubbleSortVisualise = (containerId, arr) => {
       if (swapCounter === 0) {
         lis.forEach((li) => (li.classList = "toCheck"));
         button.innerText = "Reset";
-        divLog.innerText = "Array is Sorted!";
+        divLog.innerText += "Array is Sorted!";
         checked = true;
       } else {
         lis[lis.length - 1].classList = "";
@@ -75,7 +78,7 @@ const bubbleSortVisualise = (containerId, arr) => {
       checked = false;
       i += 1;
     } else {
-      divLog.innerText = "No need for swap!";
+      divLog.innerHTML += "No need for swap! <br>";
       checked = false;
       i += 1;
     }
