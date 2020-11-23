@@ -1,0 +1,27 @@
+body {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+    background: linear-gradient(90deg, rgba(135,182,198,1) 0%, rgb(235 196 141 / 69%) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#selection-sort {
+    display:flex;
+    align-content: center;
+}
+
+.funcDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

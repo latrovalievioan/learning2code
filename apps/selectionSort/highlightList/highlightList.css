@@ -1,0 +1,28 @@
+ul.hlist {
+    display: flex;
+    list-style-type: none;
+    box-sizing: border-box;
+    padding: 4px;
+    background-color: black;
+    border: 1px solid white;
+    color: #aeeafc;
+    width: 25rem;
+    height: 5rem;
+    align-items: center;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 1.1rem;
+}
+
+li.list-item {
+    margin: 5px;
+}
+
+li.list-item.highlighted {
+    font-size: 1.7rem;
+    color: #fff6cc;
+}
+li.list-item.min-index {
+    padding: 0px 3px 0px 3px;
+    border: 1px solid white;
+}

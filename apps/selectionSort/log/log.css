@@ -1,0 +1,10 @@
+.log {
+    background-color: black;
+    border: 1px solid white;
+    width: 13rem;
+    height: 17rem;
+    overflow: auto;
+    color: #caf1f1;
+    padding: 11px;
+    box-sizing: border-box;
+}
