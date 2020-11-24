@@ -1,0 +1,25 @@
+.matrix{
+    display:grid;
+}
+
+.matrix button {
+    background-color: black;
+    border: 1px solid white;
+}
+
+.matrix button:focus {
+    background-color: rgb(88, 88, 88);
+}
+
+.matrix button.trail {
+    background-color:purple;
+}
+
+.matrix button.trail:focus {
+    background-color: rgb(88, 88, 88)
+} 
+
+.matrix button.u-shall-not-pass {
+    background-color: white;
+    border: 1px solid black;
+}
