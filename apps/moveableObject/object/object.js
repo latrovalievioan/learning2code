@@ -1,5 +1,6 @@
-const DragabbleObject = () => {
+const DragabbleObject = (color) => {
   const object = document.createElement("div");
+  object.style.backgroundColor = color;
   object.setAttribute("class", "object");
   let offsetX = 25;
   let offsetY = 25;
