@@ -6,12 +6,16 @@ const DragabbleObject = () => {
   const onMouseMove = (event) => {
     const mouseX = event.clientX;
     const mouseY = event.clientY;
-    object.style = `top:${event.clientY - offsetY}px;
-    left:${event.clientX - offsetX}px`;
+    ///bottom border
     if (
-      object.getBoundingClientRect().bottom > object.parentElement.offsetHeight
+      mouseY - offsetY >
+      object.parentElement.offsetHeight -
+        (object.getBoundingClientRect().bottom -
+          object.getBoundingClientRect().top)
     ) {
-      document.removeEventListener("mousemove", onMouseMove);
+    } else {
+      object.style = `top:${mouseY - offsetY}px;
+      left:${mouseX - offsetX}px`;
     }
   };
   object.addEventListener("mousedown", (event) => {
