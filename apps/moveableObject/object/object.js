@@ -18,9 +18,21 @@ const DragabbleObject = () => {
       mouseY - offsetY <
       object.parentElement.getBoundingClientRect().top
     ) {
+    }
+    ///left border
+    else if (
+      mouseX - offsetX <
+      object.parentElement.getBoundingClientRect().left
+    ) {
+    }
+    ///right border
+    else if (
+      mouseX - offsetX >
+      object.parentElement.getBoundingClientRect().right -
+        (object.getBoundingClientRect().right -
+          object.getBoundingClientRect().left)
+    ) {
     } else {
-      console.log(mouseY - offsetY);
-      console.log(object.parentElement.getBoundingClientRect().bottom);
       object.style = `top:${mouseY - offsetY}px;
       left:${mouseX - offsetX}px`;
     }
