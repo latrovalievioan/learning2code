@@ -1,9 +1,14 @@
-const DragabbleObject = (color) => {
+const arrStorage = [];
+
+const DragabbleObject = (color, top, left) => {
   const object = document.createElement("div");
+  arrStorage.push(object);
   object.style.backgroundColor = color;
   object.setAttribute("class", "object");
   let offsetX = 25;
   let offsetY = 25;
+  object.style.top = top;
+  object.style.left = left;
   const onMouseMove = (event) => {
     const oRect = object.getBoundingClientRect();
     const pRect = object.parentElement.getBoundingClientRect();
@@ -21,6 +26,14 @@ const DragabbleObject = (color) => {
   });
   document.addEventListener("mouseup", () => {
     document.removeEventListener("mousemove", onMouseMove);
+    const objectsState = arrStorage.map((x) => {
+      return {
+        color: x.style.backgroundColor,
+        top: x.style.top,
+        left: x.style.left,
+      };
+    });
+    localStorage.setItem("objectState", JSON.stringify(objectsState));
   });
 
   return { domElement: object };
