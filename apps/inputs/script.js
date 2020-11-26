@@ -1,6 +1,10 @@
 const renderInputs = (containerID) => {
+  const button = document.createElement("button");
+  button.innerHTML = "Save";
   const arrValues = [];
   const container = document.getElementById(containerID);
+  container.appendChild(button);
+
   for (let i = 0; i < 5; i++) {
     const input = document.createElement("input");
     const savedValues = JSON.parse(localStorage.getItem("values"));
@@ -9,7 +13,7 @@ const renderInputs = (containerID) => {
     }
 
     container.appendChild(input);
-    container.addEventListener("keyup", () => {
+    button.addEventListener("click", () => {
       arrValues[i] = input.value;
       localStorage.setItem("values", JSON.stringify(arrValues));
     });
