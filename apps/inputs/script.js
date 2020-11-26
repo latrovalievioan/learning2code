@@ -1,9 +1,11 @@
 const renderInputs = (containerID) => {
-  const button = document.createElement("button");
-  button.innerHTML = "Save";
+  const saveButton = document.createElement("button");
+  saveButton.innerHTML = "Save";
+  const clearButton = document.createElement("button");
+  clearButton.innerHTML = "Clear";
   const arrValues = [];
   const container = document.getElementById(containerID);
-  container.appendChild(button);
+  container.appendChild(saveButton);
 
   for (let i = 0; i < 5; i++) {
     const input = document.createElement("input");
@@ -13,11 +15,13 @@ const renderInputs = (containerID) => {
     }
 
     container.appendChild(input);
-    button.addEventListener("click", () => {
+    saveButton.addEventListener("click", () => {
       arrValues[i] = input.value;
       localStorage.setItem("values", JSON.stringify(arrValues));
     });
   }
+  container.appendChild(clearButton);
+  clearButton.addEventListener("click", localStorage.clear());
 };
 
 renderInputs("divInput");
