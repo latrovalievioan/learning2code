@@ -21,7 +21,14 @@ const renderInputs = (containerID) => {
     });
   }
   container.appendChild(clearButton);
-  clearButton.addEventListener("click", localStorage.clear());
+  clearButton.addEventListener("click", (event) => {
+    localStorage.clear();
+    let inputs = document.getElementsByTagName("input");
+    inputs = Array.from(inputs);
+    inputs.forEach((input) => {
+      input.value = "";
+    });
+  });
 };
 
 renderInputs("divInput");
