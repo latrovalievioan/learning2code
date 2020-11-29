@@ -15,7 +15,23 @@ const main = () => {
   };
   const filesList = PrevFileList(files, selectFile);
 
-  const splitView = SplitView(filesList.domElement, fileContent.domElement);
+  const addFile = (filename) => {
+    const newFile = {
+      type: "file",
+      filename: filename,
+      content: "",
+    };
+    files.push(newFile);
+    filesList.addFile(newFile);
+  };
+
+  const fileActions = FileActions(addFile);
+
+  const leftElement = document.createDocumentFragment();
+  leftElement.appendChild(fileActions.domElement);
+  leftElement.appendChild(filesList.domElement);
+
+  const splitView = SplitView(leftElement, fileContent.domElement);
   mainContainer.appendChild(splitView.domElement);
 };
 
