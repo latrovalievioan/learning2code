@@ -1,0 +1,15 @@
+.split-view {
+    height: 100%;
+    width: 100%;
+    display:flex;
+    
+}
+
+.split-view .left-container {
+    width: 15%;
+    border-right: 1px solid black;
+}
+
+.split-view .right-container {
+    width: 85%;
+}

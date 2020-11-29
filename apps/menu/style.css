@@ -1,43 +1,6 @@
-:root, body, #file-viewer {
-    margin:0;
-    padding:0;
-    height:100%;
-    width:100%;
-}
-
-div#file-viewer {
-    display: flex;
+html, body, main {
     height: 100%;
     width: 100%;
-}
-div#display {
-    width: 100%;
-    background-color: black;
-    margin: 0px;
-    color: yellow;
-    padding: 10px;
-}
-ul {
-    background-color: #2a2a2a;
-    list-style-type: none;
-    box-sizing: border-box;
-    height: 100%;
     margin: 0;
-    color: white;
-    padding: 30px 10px 10px 20px;
-    width: 116px;
-}
-
-li {
-    margin: 1px;
-}
-
-li:hover {
-    border: 1px solid gray;
-    cursor: pointer;
-}
-
-button.new-file {
-    position: absolute;
-    top: 0px;
+    padding: 0;
 }
