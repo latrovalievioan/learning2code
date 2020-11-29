@@ -1,4 +1,4 @@
-const PrevFileList = (files) => {
+const PrevFileList = (files, selectFile) => {
   const list = mkElem("ol", { class: "files-list" });
   const sortedFiles = files
     .slice()
@@ -6,6 +6,9 @@ const PrevFileList = (files) => {
     .map((file) => {
       const li = mkElem("li", { class: "file-item" });
       li.innerText = file.filename;
+      li.addEventListener("click", () => {
+        selectFile(file);
+      });
       list.appendChild(li);
       return li;
     });

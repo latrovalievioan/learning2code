@@ -6,12 +6,16 @@ const main = () => {
     { type: "file", filename: "style.css", content: "stilche ;)" },
     { type: "file", filename: "Hello.py", content: "print('Hello World')" },
   ];
-  const filesList = PrevFileList(files);
+  const fileContent = FileContent();
+  let selectedFile;
+  const selectFile = (file) => {
+    selectedFile = file;
+    fileContent.setContent(file.content);
+    fileContent.setFileName(file.filename);
+  };
+  const filesList = PrevFileList(files, selectFile);
 
-  const rightSpan = document.createElement("span");
-  rightSpan.innerHTML = "right";
-
-  const splitView = SplitView(filesList.domElement, rightSpan);
+  const splitView = SplitView(filesList.domElement, fileContent.domElement);
   mainContainer.appendChild(splitView.domElement);
 };
 
