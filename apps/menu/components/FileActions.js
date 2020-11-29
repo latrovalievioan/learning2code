@@ -3,7 +3,12 @@ const FileActions = (addFile, onDelFile) => {
 
   const newFileInput = mkElem("input", { class: "file-name-input hidden" });
   newFileInput.addEventListener("change", () => {
+    if (!newFileInput.value) {
+      return;
+    }
     addFile(newFileInput.value);
+    newFileInput.classList.add("hidden");
+    newFileInput.value = "";
   });
   container.appendChild(newFileInput);
 
