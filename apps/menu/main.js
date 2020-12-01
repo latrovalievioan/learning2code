@@ -1,11 +1,7 @@
 const main = () => {
   const mainContainer = document.querySelector("main");
 
-  const files = [
-    { type: "file", filename: "index.html", content: "kontent" },
-    { type: "file", filename: "style.css", content: "stilche ;)" },
-    { type: "file", filename: "Hello.py", content: "print('Hello World')" },
-  ];
+  const files = getFilesFromStorage();
   const fileContent = FileContent();
   let selectedFile;
   const selectFile = (file) => {
@@ -23,6 +19,7 @@ const main = () => {
     };
     files.push(newFile);
     filesList.addFile(newFile);
+    saveFilesToStorage(files);
   };
 
   const deleteSelectedFile = () => {
@@ -34,6 +31,7 @@ const main = () => {
       (f) => f.filename === selectedFile.filename
     );
     files.splice(selectedFileIndex, 1);
+    saveFilesToStorage(files);
     if (files[0]) {
       selectFile(files[0]);
     } else {
