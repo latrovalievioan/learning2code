@@ -25,7 +25,24 @@ const main = () => {
     filesList.addFile(newFile);
   };
 
-  const fileActions = FileActions(addFile);
+  const deleteSelectedFile = () => {
+    if (!selectedFile) {
+      return;
+    }
+    filesList.removeFile(selectedFile);
+    const selectedFileIndex = files.findIndex(
+      (f) => f.filename === selectedFile.filename
+    );
+    files.splice(selectedFileIndex, 1);
+    if (files[0]) {
+      selectFile(files[0]);
+    } else {
+      fileContent.setContent("");
+      fileContent.setFileName("");
+    }
+  };
+
+  const fileActions = FileActions(addFile, deleteSelectedFile);
 
   const leftElement = document.createDocumentFragment();
   leftElement.appendChild(fileActions.domElement);
