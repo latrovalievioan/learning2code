@@ -12,10 +12,71 @@ li.file-item {
     font-size: medium;
     padding: 1px;
     padding-left: 20px;
+    display: flex;
 }
 li.file-item:hover {
     background-color: rgba(10,165,133,0.87);
     color: black;
     border-radius: 6px;
     font-size: 20px;
+}
+
+li.file-item.txt:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/txt.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.file-item.js:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/js.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.file-item.py:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/py.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.file-item.html:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/html.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.file-item.css:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/css.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.file-item.java:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/java.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
 }

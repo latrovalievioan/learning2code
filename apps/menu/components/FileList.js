@@ -6,6 +6,13 @@ const PrevFileList = (files, selectFile) => {
       class: "file-item",
       "data-filename": file.filename,
     });
+    const regex = /\..+/gi;
+    if (file.filename.match(regex) === null) {
+      file.filename += ".txt";
+      li.setAttribute("data-filename", `${file.filename}`);
+    }
+    ///get extension to class
+    li.classList.add(`${file.filename.match(regex).join().replace(".", "")}`);
     li.innerText = file.filename;
     li.addEventListener("click", () => {
       selectFile(file);

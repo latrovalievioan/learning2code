@@ -1,8 +1,4 @@
-if (2 < 10 && 3 < 10 && 9 < 10) {
-  console.log("kurvi");
-}
-const files = [
-  { type: "file", filename: "index.html", content: "kontent" },
-  { type: "file", filename: "style.css", content: "stilche ;)" },
-  { type: "file", filename: "Hello.py", content: "print('Hello World')" },
-];
+const r = "hello.javay";
+const regex = /\..+/gi;
+
+console.log(r.match(regex).join().replace(".", ""));
