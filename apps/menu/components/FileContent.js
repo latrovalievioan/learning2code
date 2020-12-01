@@ -1,6 +1,6 @@
 const FileContent = () => {
   const container = mkElem("div", { class: "file-content" });
-  const fileName = mkElem("h2");
+  const fileName = mkElem("h2", { class: "hidden" });
   container.appendChild(fileName);
   const pre = mkElem("pre");
   container.appendChild(pre);
@@ -9,6 +9,7 @@ const FileContent = () => {
   };
   const setFileName = (name) => {
     fileName.innerText = name;
+    fileName.classList.remove("hidden");
   };
 
   return {

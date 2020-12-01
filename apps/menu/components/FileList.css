@@ -4,3 +4,18 @@ ol.files-list {
     box-sizing: border-box;
     list-style: none;
 }
+
+li.file-item {
+    user-select: none;
+    color: floralwhite;
+    font-family: cursive;
+    font-size: medium;
+    padding: 1px;
+    padding-left: 20px;
+}
+li.file-item:hover {
+    background-color: rgba(10,165,133,0.87);
+    color: black;
+    border-radius: 6px;
+    font-size: 20px;
+}

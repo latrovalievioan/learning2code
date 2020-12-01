@@ -1,0 +1,31 @@
+.file-actions {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+    margin-top: 7px;
+}
+
+input.file-name-input {
+    margin-top: 3px;
+    font-family: cursive;
+    border-radius: 11px;
+    background-color: floralwhite;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.file-actions button {
+    font-family: cursive;
+    background-color: #1E2741;
+    border-style: solid;
+    border-radius: 11px;
+    height: 30px;
+    width: 102px;
+    border: 1px solid floralwhite;
+    color: floralwhite;
+}
+
+.file-actions button:hover {
+    background-color: #0C947A;
+    color: black;
+}

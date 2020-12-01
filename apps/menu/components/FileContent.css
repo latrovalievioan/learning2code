@@ -1,0 +1,27 @@
+.file-content h2 {
+    display: inline-block;
+    border: 2px solid #344251;
+    border-top: none;
+    border-left: none;
+    border-radius: 2px;
+    margin-top: 0;
+    width: 180px;
+    height: 24px;
+    text-align: center;
+    margin-left: 0;
+    background-color: #1A2032;
+    color: #0C947A;
+    font-family: cursive;
+    font-size: 17px;
+}
+
+pre {
+    color: floralwhite;
+    font-family: monospace;
+    padding-left: 20px;
+    font-size: 17px;
+}
+
+.file-content .hidden {
+    display:none;
+}
