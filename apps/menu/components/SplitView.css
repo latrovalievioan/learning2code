@@ -13,4 +13,5 @@
 .split-view .right-container {
     width: 85%;
     background-color: #1e2741;
+    flex: 1
 }
