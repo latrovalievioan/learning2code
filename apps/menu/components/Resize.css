@@ -1,0 +1,7 @@
+.resize {
+    background-color: #344251;
+    height: 100%;
+    width: 5px;
+    cursor: col-resize;
+    position: absolute;
+}

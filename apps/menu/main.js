@@ -46,7 +46,13 @@ const main = () => {
   leftElement.appendChild(fileActions.domElement);
   leftElement.appendChild(filesList.domElement);
 
-  const splitView = SplitView(leftElement, fileContent.domElement);
+  const resizeElem = ResizeElement();
+
+  const splitView = SplitView(
+    leftElement,
+    resizeElem.domElement,
+    fileContent.domElement
+  );
   mainContainer.appendChild(splitView.domElement);
 };
 
