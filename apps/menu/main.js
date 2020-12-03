@@ -8,7 +8,11 @@ const main = () => {
     selectedFile = file;
     fileContent.setContent(file.content);
     fileContent.setFileName(file.filename);
+    document.addEventListener("keyup", (e) => {
+      file.content = document.getElementById("content").innerText;
+    });
   };
+
   const filesList = PrevFileList(files, selectFile);
 
   const addFile = (filename) => {
