@@ -8,10 +8,18 @@ const main = () => {
     selectedFile = file;
     fileContent.setContent(file.content);
     fileContent.setFileName(file.filename);
-    document.addEventListener("keyup", (e) => {
-      file.content = document.getElementById("content").innerText;
-    });
   };
+
+  fileContent.pre.addEventListener("keyup", (e) => {
+    if (selectedFile !== undefined) {
+      const selectedFileIndex = files.findIndex(
+        (f) => f.filename === selectedFile.filename
+      );
+      console.log(selectedFile);
+      files[selectedFileIndex].content = fileContent.pre.innerText;
+    }
+    saveFilesToStorage(files);
+  });
 
   const filesList = PrevFileList(files, selectFile);
 

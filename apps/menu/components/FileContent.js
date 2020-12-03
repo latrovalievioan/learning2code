@@ -12,9 +12,11 @@ const FileContent = () => {
     fileName.innerText = name;
     fileName.classList.remove("hidden");
   };
+
   return {
     domElement: container,
     setContent,
     setFileName,
+    pre,
   };
 };
