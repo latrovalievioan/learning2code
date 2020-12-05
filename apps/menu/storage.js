@@ -6,6 +6,15 @@ const filesSeed = [
   { type: "file", filename: "index.html", content: "kontent" },
   { type: "file", filename: "style.css", content: "stilche ;)" },
   { type: "file", filename: "Hello.py", content: "print('Hello World')" },
+  {
+    type: "directory",
+    filename: "files",
+    content: [
+      { type: "file", filename: "index.html", content: "kontent" },
+      { type: "file", filename: "style.css", content: "stilche ;)" },
+      { type: "file", filename: "Hello.py", content: "print('Hello World')" },
+    ],
+  },
 ];
 
 const getFilesFromStorage = () => {

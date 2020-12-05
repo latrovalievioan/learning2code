@@ -15,7 +15,6 @@ const main = () => {
       const selectedFileIndex = files.findIndex(
         (f) => f.filename === selectedFile.filename
       );
-      console.log(selectedFile);
       files[selectedFileIndex].content = fileContent.pre.innerText;
     }
     saveFilesToStorage(files);
