@@ -23,8 +23,8 @@ const PrevFileList = (files, selectFile) => {
       return li;
     } else if (file.type === "directory") {
       const directLi = mkElem("li", { class: "directory" });
-      directLi.innerText = "pi6ka";
-      const directory = PrevFileList(file.content);
+      directLi.innerText = file.filename;
+      const directory = PrevFileList(file.content, selectFile);
       directLi.appendChild(directory.domElement);
       directLi.addEventListener("click", (e) => {
         directLi.lastChild.classList.toggle("hidden");

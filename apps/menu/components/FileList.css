@@ -5,7 +5,7 @@ ol.files-list {
     list-style: none;
 }
 
-li.file-item {
+li.file-item,li.directory {
     user-select: none;
     color: floralwhite;
     font-family: cursive;
@@ -14,7 +14,10 @@ li.file-item {
     padding-left: 20px;
     display: flex;
 }
-li.file-item:hover {
+li.directory{
+    cursor:pointer;
+}
+li.file-item:hover,li.directory:hover {
     background-color: rgba(10,165,133,0.87);
     color: black;
     border-radius: 6px;
@@ -75,6 +78,16 @@ li.file-item.java:before {
     content: "";
     display: inline-block;
     background-image: url(../images/java.png);
+    width: 25px;
+    height: 29px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+li.directory:before {
+    content: "";
+    display: inline-block;
+    background-image: url(../images/directory.png);
     width: 25px;
     height: 29px;
     background-size: 25px;
