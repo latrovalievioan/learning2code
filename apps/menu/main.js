@@ -12,10 +12,7 @@ const main = () => {
 
   fileContent.pre.addEventListener("keyup", (e) => {
     if (selectedFile !== undefined) {
-      const selectedFileIndex = files.findIndex(
-        (f) => f.filename === selectedFile.filename
-      );
-      files[selectedFileIndex].content = fileContent.pre.innerText;
+      selectedFile.content = fileContent.pre.innerText;
     }
     saveFilesToStorage(files);
   });

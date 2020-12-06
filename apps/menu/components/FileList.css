@@ -3,6 +3,7 @@ ol.files-list {
     width: 100%;
     box-sizing: border-box;
     list-style: none;
+    padding-left: 5px;
 }
 
 li.file-item,li.directory {
@@ -14,17 +15,20 @@ li.file-item,li.directory {
     padding-left: 20px;
     display: flex;
 }
-li.directory{
-    cursor:pointer;
+li.directory {
+    flex-direction: column;
 }
-li.file-item:hover,li.directory:hover {
-    background-color: rgba(10,165,133,0.87);
-    color: black;
+li.directory > span {
+    cursor: pointer;
+}
+
+li.file-item > span:hover, li.directory > span:hover {
+    color: rgb(41 255 255 / 87%);
     border-radius: 6px;
     font-size: 20px;
 }
 
-li.file-item.txt:before {
+li.file-item.txt  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/txt.png);
@@ -34,7 +38,7 @@ li.file-item.txt:before {
     background-repeat: no-repeat;
 }
 
-li.file-item.js:before {
+li.file-item.js  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/js.png);
@@ -44,7 +48,7 @@ li.file-item.js:before {
     background-repeat: no-repeat;
 }
 
-li.file-item.py:before {
+li.file-item.py  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/py.png);
@@ -54,7 +58,7 @@ li.file-item.py:before {
     background-repeat: no-repeat;
 }
 
-li.file-item.html:before {
+li.file-item.html  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/html.png);
@@ -64,7 +68,7 @@ li.file-item.html:before {
     background-repeat: no-repeat;
 }
 
-li.file-item.css:before {
+li.file-item.css  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/css.png);
@@ -74,7 +78,7 @@ li.file-item.css:before {
     background-repeat: no-repeat;
 }
 
-li.file-item.java:before {
+li.file-item.java  > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/java.png);
@@ -84,7 +88,7 @@ li.file-item.java:before {
     background-repeat: no-repeat;
 }
 
-li.directory:before {
+li.directory > span:before {
     content: "";
     display: inline-block;
     background-image: url(../images/directory.png);
@@ -93,3 +97,16 @@ li.directory:before {
     background-size: 25px;
     background-repeat: no-repeat;
 }
+
+li.file-item.selected {
+    background-color: #249d84;
+    border-radius: 3px 10px 10px 3px;
+    color: black;
+}
+
+li.directory > span, li.file-item > span {
+    display: flex;
+}
+
+
+

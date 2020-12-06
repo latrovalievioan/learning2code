@@ -2,6 +2,7 @@ const PrevFileList = (files, selectFile) => {
   const list = mkElem("ol", { class: "files-list" });
 
   const addFile = (file) => {
+    const span = mkElem("span");
     if (file.type === "file") {
       const li = mkElem("li", {
         class: "file-item",
@@ -14,21 +15,31 @@ const PrevFileList = (files, selectFile) => {
       }
       ///get extension to class
       li.classList.add(`${file.filename.match(regex).join().replace(".", "")}`);
-      li.innerText = file.filename;
+      span.innerText = file.filename;
 
-      li.addEventListener("click", () => {
+      li.addEventListener("click", (e) => {
+        const previous = document.querySelector("li.selected.file-item");
+        if (previous) {
+          previous.classList.remove("selected");
+        }
+        e.stopPropagation();
+        li.classList.add("selected");
         selectFile(file);
       });
+      li.appendChild(span);
       list.appendChild(li);
       return li;
     } else if (file.type === "directory") {
       const directLi = mkElem("li", { class: "directory" });
-      directLi.innerText = file.filename;
+      span.innerText = file.filename;
       const directory = PrevFileList(file.content, selectFile);
+      directLi.appendChild(span);
       directLi.appendChild(directory.domElement);
       directLi.addEventListener("click", (e) => {
+        e.stopPropagation();
         directLi.lastChild.classList.toggle("hidden");
       });
+
       list.appendChild(directLi);
     }
   };

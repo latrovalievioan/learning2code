@@ -13,6 +13,19 @@ const filesSeed = [
       { type: "file", filename: "index1.html", content: "kontent1" },
       { type: "file", filename: "style1.css", content: "stilche ;)1" },
       { type: "file", filename: "Hello1.py", content: "print('Hello World')1" },
+      {
+        type: "directory",
+        filename: "files",
+        content: [
+          { type: "file", filename: "index1.html", content: "kontent1" },
+          { type: "file", filename: "style1.css", content: "stilche ;)1" },
+          {
+            type: "file",
+            filename: "Hello1.py",
+            content: "print('Hello World')1",
+          },
+        ],
+      },
     ],
   },
 ];
