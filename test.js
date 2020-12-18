@@ -1,5 +1,11 @@
-let x = { value: 10 };
-let y = x;
-x = { value: 5 };
+const fn = () => {
+  const x = 5;
+  const ft = () => {
+    x = 10;
+  };
+  return { x, ft };
+};
 
-console.log(y);
+let h = fn();
+h.ft();
+console.log(h);
