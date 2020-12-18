@@ -75,12 +75,46 @@ const At = () => {
   return { button, field };
 };
 
+const RemoveAt = () => {
+  const field = mkElem("input", { type: "text", class: "remove-at" });
+  const button = mkElem("button", { class: "remove-at" });
+  button.innerText = "Remove At";
+  button.addEventListener("click", () => {
+    for (let i = 0; i < document.getElementsByClassName("Node").length; i++) {
+      if (i === Number(field.value)) {
+        list.removeAt(i);
+        renderList("linked-list", list);
+      }
+    }
+  });
+  return { button, field };
+};
+
+const InsertAt = () => {
+  const fieldAt = mkElem("input", { type: "text", class: "insert-at" });
+  const fieldValue = mkElem("input", { type: "text", class: "insert-value" });
+  const button = mkElem("button", { class: "insert-at" });
+  button.innerText = "Insert At - Value";
+  button.addEventListener("click", () => {
+    for (let i = 0; i < document.getElementsByClassName("Node").length; i++) {
+      if (i === Number(fieldAt.value)) {
+        list.insert(i, fieldValue.value);
+        renderList("linked-list", list);
+      }
+    }
+  });
+  return { button, fieldAt, fieldValue };
+};
+
 const renderControls = (containerId) => {
   const container = document.getElementById(containerId);
   const append = Append();
   const prepend = Prepend();
   const reverse = Reverse();
   const at = At();
+  const removeAt = RemoveAt();
+  const insertAt = InsertAt();
+
   const appendContainer = mkElem("div", { class: "append-container" });
   appendContainer.appendChild(append.button);
   appendContainer.appendChild(append.field);
@@ -88,12 +122,22 @@ const renderControls = (containerId) => {
   prependContainer.appendChild(prepend.button);
   prependContainer.appendChild(prepend.field);
   const atContainer = mkElem("div", { class: "at-container" });
+  atContainer.appendChild(at.button);
+  atContainer.appendChild(at.field);
+  const removeAtContainer = mkElem("div", { class: "remove-at-container" });
+  removeAtContainer.appendChild(removeAt.button);
+  removeAtContainer.appendChild(removeAt.field);
+  const insertAtContainer = mkElem("div", { class: "insert-at" });
+  insertAtContainer.appendChild(insertAt.button);
+  insertAtContainer.appendChild(insertAt.fieldAt);
+  insertAtContainer.appendChild(insertAt.fieldValue);
+
   container.appendChild(appendContainer);
   container.appendChild(prependContainer);
   container.appendChild(reverse.domElement);
-  atContainer.appendChild(at.button);
-  atContainer.appendChild(at.field);
   container.appendChild(atContainer);
+  container.appendChild(removeAtContainer);
+  container.appendChild(insertAtContainer);
 };
 
 renderList("linked-list", list);
