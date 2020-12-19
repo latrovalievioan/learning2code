@@ -77,6 +77,15 @@ button.addEventListener("click", () => {
     button.innerText = "At";
     button.addEventListener("click", () => {
       for (let i = 0; i < document.getElementsByClassName("Node").length; i++) {
+        if (
+          document
+            .getElementsByClassName("Node")
+            [i].classList.contains("highlighted")
+        ) {
+          document
+            .getElementsByClassName("Node")
+            [i].classList.remove("highlighted");
+        }
         if (i === Number(field.value)) {
           document
             .getElementsByClassName("Node")
