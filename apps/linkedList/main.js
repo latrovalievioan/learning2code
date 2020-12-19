@@ -1,6 +1,6 @@
 const container = document.getElementById("initial-content");
 const welcome = mkElem("h1", { class: "welcome-text" });
-welcome.innerText = "Give me an input, so I can render a list";
+welcome.innerText = "Give me an input, so I can render a list!";
 const field = mkElem("input", { type: "text", class: "initial-input" });
 const button = mkElem("button", { class: "initial-button" });
 button.innerText = "Render List";
@@ -53,7 +53,6 @@ button.addEventListener("click", () => {
     const button = mkElem("button", { class: "prepend" });
     button.innerText = "Prepend";
     button.addEventListener("click", () => {
-      console.log(field.value);
       list.prepend(field.value);
       field.value = "";
       renderList("linked-list", list);

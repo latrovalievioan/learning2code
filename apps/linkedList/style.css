@@ -1,3 +1,91 @@
 ol, ul {
     list-style-type: none;
 }
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    flex-direction: column;
+}
+
+div#initial-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 200px;
+}
+body {
+background: linear-gradient(90deg, rgba(198,135,188,1) 0%, rgba(48,123,212,1) 100%);
+}
+
+h1.welcome-text {
+    color: black;
+    font-family: system-ui;
+}
+
+input.initial-input {
+    margin-bottom: 17px;
+    font-family: cursive;
+    width: 30em;
+}
+
+button.initial-button {
+    width: 5em;
+    height: 3em;
+    background-color: black;
+    border: 1px solid white;
+    color: skyblue;
+    font-family: cursive;
+}
+
+button.initial-button:hover {
+    width: 5em;
+    height: 3em;
+    background-color: #b7b9dd;
+    border: 1px solid white;
+    color: black;
+    font-family: cursive;
+}
+
+div#linked-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 30em;
+}
+
+ol.linked-list {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+li.Node {
+    background-color: black;
+    border: 1px solid white;
+    width: 5em;
+    height: 5em;
+    border-radius: 47px;
+    color: white;
+    font-family: cursive;
+    margin: 3em;
+    text-align: center;
+    line-height: 5em;
+}
+li.Node::after {
+    content: "";
+    display: inline-block;
+    background-image: url(./pngfind.com-orange-arrow-icon-png-2712331.png);
+    width: 100px;
+    height: 100px;
+    background-size: 100px;
+    background-repeat: no-repeat;
+    position: absolute;
+    margin: 37px;
+}
