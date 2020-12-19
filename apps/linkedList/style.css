@@ -89,3 +89,8 @@ li.Node::after {
     position: absolute;
     margin: 37px;
 }
+
+li.Node.highlighted {
+    background-color: lightskyblue;
+    color: black;
+}
