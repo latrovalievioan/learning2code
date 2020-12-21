@@ -64,6 +64,7 @@ ol.linked-list {
     justify-content: center;
     width: 100%;
     height: 100%;
+    flex-wrap: wrap;
 }
 
 li.Node {
@@ -77,6 +78,7 @@ li.Node {
     margin: 3em;
     text-align: center;
     line-height: 5em;
+    position: relative;
 }
 li.Node::after {
     content: "";
@@ -88,9 +90,19 @@ li.Node::after {
     background-repeat: no-repeat;
     position: absolute;
     margin: 37px;
+    top: -20px;
 }
 
 li.Node.highlighted {
     background-color: lightskyblue;
     color: black;
+}
+ul.list-preperties {
+    background-color: black;
+    width: 8em;
+    height: 8em;
+    color: white;
+    font-family: cursive;
+    padding: 10px;
+    border: 1px solid white;
 }
