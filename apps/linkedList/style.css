@@ -108,15 +108,18 @@ ul.list-preperties {
 }
 
 .context-menu.active {
-    top: 54px;
-    left: 63px;
     display: flex;
     flex-direction: column;
     color: white;
     background-color: black;
     width: 133px;
     font-family: cursive;
+    position: fixed;
     }
+
+.context-menu.hidden {
+    display:none;
+}
 
 .context-menu.active span {
     margin: 2px;

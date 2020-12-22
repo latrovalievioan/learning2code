@@ -6,6 +6,26 @@ const button = mkElem("button", { class: "initial-button" });
 button.innerText = "Render List";
 let arr = [];
 
+const contextMenu = mkElem("div", { class: "context-menu" });
+const remove = mkElem("span", { class: "remove" });
+remove.innerText = "Remove";
+contextMenu.appendChild(remove);
+
+const changeValue = mkElem("span", { class: "change-value" });
+changeValue.innerText = "Change Value";
+contextMenu.appendChild(changeValue);
+
+const insertAfter = mkElem("span", { class: "insert-after" });
+insertAfter.innerText = "Insert after";
+contextMenu.appendChild(insertAfter);
+
+const insertBefore = mkElem("span", { class: "insert-before" });
+insertBefore.innerText = "Insert before";
+contextMenu.appendChild(insertBefore);
+contextMenu.classList.add("active");
+document.body.appendChild(contextMenu);
+contextMenu.classList.add("hidden");
+
 container.appendChild(welcome);
 container.appendChild(field);
 container.appendChild(button);
@@ -27,32 +47,19 @@ const renderList = (containerId, list) => {
   listProperties.appendChild(length);
   const linkedList = mkElem("ol", { class: "linked-list" });
   const lis = list.toArray();
+
   lis.forEach((x) => {
     const li = mkElem("li", { class: "Node" });
     li.innerText = x;
     linkedList.appendChild(li);
     li.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-      const contextMenu = mkElem("div", { class: "context-menu" });
-      const remove = mkElem("span", { class: "remove" });
-      remove.innerText = "Remove";
-      contextMenu.appendChild(remove);
-
-      const changeValue = mkElem("span", { class: "change-value" });
-      changeValue.innerText = "Change Value";
-      contextMenu.appendChild(changeValue);
-
-      const insertAfter = mkElem("span", { class: "insert-after" });
-      insertAfter.innerText = "Insert after";
-      contextMenu.appendChild(insertAfter);
-
-      const insertBefore = mkElem("span", { class: "insert-before" });
-      insertBefore.innerText = "Insert before";
-      contextMenu.appendChild(insertBefore);
-      contextMenu.style.top = e.offsetY + "px";
-      contextMenu.style.left = e.offsetX + "px";
-      contextMenu.classList.add("active");
-      document.body.appendChild(contextMenu);
+      contextMenu.classList.remove("hidden");
+      contextMenu.style.top = `${e.clientY - 20}px`;
+      contextMenu.style.left = `${e.clientX - 20}px`;
+      document.addEventListener("click", () => {
+        contextMenu.classList.add("hidden");
+      });
     });
   });
   container.appendChild(linkedList);
