@@ -26,6 +26,10 @@ contextMenu.classList.add("active");
 document.body.appendChild(contextMenu);
 contextMenu.classList.add("hidden");
 
+const input = mkElem("input", { class: "input", type: "text" });
+input.classList.add("hidden");
+document.body.appendChild(input);
+
 container.appendChild(welcome);
 container.appendChild(field);
 container.appendChild(button);
@@ -61,6 +65,52 @@ const renderList = (containerId, list) => {
         list.remove(li.innerText);
         renderList(containerId, list);
       });
+      changeValue.addEventListener("click", (e) => {
+        input.classList.remove("hidden");
+        input.style.top = `${e.clientY - 20}px`;
+        input.style.left = `${e.clientX - 20}px`;
+        for (let i = 0; i < list.length; i++) {
+          if (list.at(i) === li.innerText) {
+            input.addEventListener("change", () => {
+              input.classList.add("hidden");
+              list.removeAt(i);
+              list.insert(i, input.value);
+              renderList(containerId, list);
+            });
+          }
+        }
+      });
+
+      insertAfter.addEventListener("click", (e) => {
+        input.classList.remove("hidden");
+        input.style.top = `${e.clientY - 20}px`;
+        input.style.left = `${e.clientX - 20}px`;
+        for (let i = 0; i < list.length; i++) {
+          if (list.at(i) === li.innerText) {
+            input.addEventListener("change", () => {
+              input.classList.add("hidden");
+              list.insert(i + 1, input.value);
+              renderList(containerId, list);
+            });
+          }
+        }
+      });
+
+      insertBefore.addEventListener("click", (e) => {
+        input.classList.remove("hidden");
+        input.style.top = `${e.clientY - 20}px`;
+        input.style.left = `${e.clientX - 20}px`;
+        for (let i = 0; i < list.length; i++) {
+          if (list.at(i) === li.innerText) {
+            input.addEventListener("change", () => {
+              input.classList.add("hidden");
+              list.insert(i - 1 || 0, input.value);
+              renderList(containerId, list);
+            });
+          }
+        }
+      });
+
       document.addEventListener("click", () => {
         contextMenu.classList.add("hidden");
       });

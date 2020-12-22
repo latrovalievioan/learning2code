@@ -121,6 +121,8 @@ ul.list-preperties {
     display:none;
 }
 
+
+
 .context-menu.active span {
     margin: 2px;
     background-color: #241e1e;
@@ -132,4 +134,13 @@ ul.list-preperties {
     background: #ffffff91;
     color: black;
     cursor: context-menu;
+}
+
+.input.hidden{
+    display:none;
+}
+
+.input {
+    position: fixed;
+    width: 5em;
 }
