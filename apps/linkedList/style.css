@@ -106,3 +106,27 @@ ul.list-preperties {
     padding: 10px;
     border: 1px solid white;
 }
+
+.context-menu.active {
+    top: 54px;
+    left: 63px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    width: 133px;
+    font-family: cursive;
+    }
+
+.context-menu.active span {
+    margin: 2px;
+    background-color: #241e1e;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+.context-menu.active span:hover {
+    background: #ffffff91;
+    color: black;
+    cursor: context-menu;
+}

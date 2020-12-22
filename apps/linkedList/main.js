@@ -33,15 +33,26 @@ const renderList = (containerId, list) => {
     linkedList.appendChild(li);
     li.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-      const menu = mkElem("div", { class: "context-menu" });
-      const menuElem = (elem) => {
-        elem.innerText = "go6o";
-        menu.appendChild(elem);
-      };
-      const elemen4e = mkElem("span", { class: "element4e" });
+      const contextMenu = mkElem("div", { class: "context-menu" });
+      const remove = mkElem("span", { class: "remove" });
+      remove.innerText = "Remove";
+      contextMenu.appendChild(remove);
 
-      menuElem(elemen4e);
-      document.body.appendChild(menu);
+      const changeValue = mkElem("span", { class: "change-value" });
+      changeValue.innerText = "Change Value";
+      contextMenu.appendChild(changeValue);
+
+      const insertAfter = mkElem("span", { class: "insert-after" });
+      insertAfter.innerText = "Insert after";
+      contextMenu.appendChild(insertAfter);
+
+      const insertBefore = mkElem("span", { class: "insert-before" });
+      insertBefore.innerText = "Insert before";
+      contextMenu.appendChild(insertBefore);
+      contextMenu.style.top = e.offsetY + "px";
+      contextMenu.style.left = e.offsetX + "px";
+      contextMenu.classList.add("active");
+      document.body.appendChild(contextMenu);
     });
   });
   container.appendChild(linkedList);
