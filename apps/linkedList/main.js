@@ -41,9 +41,9 @@ const renderList = (containerId, list) => {
   }
   const listProperties = mkElem("ul", { class: "list-preperties" });
   const tail = mkElem("li", { class: "tail" });
-  tail.innerText = `List - tail: ${list.tail.value}`;
+  tail.innerText = `List - tail: ${list.at(list.length - 1)}`;
   const head = mkElem("li", { class: "head" });
-  head.innerText = `List - head: ${list.root.value}`;
+  head.innerText = `List - head: ${list.at(0)}`;
   const length = mkElem("li", { class: "length" });
   length.innerText = `List - length: ${list.length}`;
   listProperties.appendChild(head);
@@ -61,6 +61,7 @@ const renderList = (containerId, list) => {
       contextMenu.classList.remove("hidden");
       contextMenu.style.top = `${e.clientY - 20}px`;
       contextMenu.style.left = `${e.clientX - 20}px`;
+
       remove.addEventListener("click", (e) => {
         list.remove(li.innerText);
         renderList(containerId, list);

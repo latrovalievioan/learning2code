@@ -17,33 +17,33 @@ class List {
   }
 
   constructor() {
-    this.root = null;
-    this.tail = null;
+    this._root = null;
+    this._tail = null;
     this._length = 0;
   }
 
   append(value) {
     this._length += 1;
 
-    if (!this.root) {
-      this.root = new Node_(value);
-      this.tail = this.root;
+    if (!this._root) {
+      this._root = new Node_(value);
+      this._tail = this._root;
       return;
     }
-    this.tail.next = new Node_(value);
-    this.tail = this.tail.next;
+    this._tail.next = new Node_(value);
+    this._tail = this._tail.next;
   }
 
   prepend(value) {
-    this.root = new Node_(value, this.root);
+    this._root = new Node_(value, this._root);
     this._length += 1;
-    if (!this.tail) {
-      this.tail = this.root;
+    if (!this._tail) {
+      this._tail = this._root;
     }
   }
 
   at(index) {
-    let current = this.root;
+    let current = this._root;
     let i = 0;
     if (!current) {
       return undefined;
@@ -62,16 +62,16 @@ class List {
 
   insert(index, value) {
     this._length += 1;
-    if (!this.root) {
-      this.root = new Node_(value);
+    if (!this._root) {
+      this._root = new Node_(value);
       return this;
     }
     if (index <= 0) {
-      this.root = new Node_(value, this.root);
+      this._root = new Node_(value, this._root);
       return this;
     }
-    let current = this.root.next;
-    let prev = this.root;
+    let current = this._root.next;
+    let prev = this._root;
     let i = 0;
     while (current && i < index - 1) {
       prev = current;
@@ -88,7 +88,7 @@ class List {
 
   toArray() {
     const arr = [];
-    let current = this.root;
+    let current = this._root;
     while (current) {
       arr.push(current.value);
       current = current.next;
@@ -98,26 +98,26 @@ class List {
 
   reverse() {
     let prev = null;
-    let curr = this.root;
+    let curr = this._root;
     while (curr) {
       let next = curr.next;
       curr.next = prev;
       prev = curr;
       curr = next;
     }
-    [this.root, this.tail] = [this.tail, this.root];
+    [this._root, this._tail] = [this._tail, this._root];
     return this;
   }
 
   remove(value) {
-    if (!this.root) {
+    if (!this._root) {
       return;
     }
-    if (value === this.root.value) {
-      this.root = this.root.next;
+    if (value === this._root.value) {
+      this._root = this._root.next;
       this._length--;
     }
-    let current = this.root;
+    let current = this._root;
     let prev = null;
     while (current.next) {
       if (value === current.value) {
@@ -130,19 +130,19 @@ class List {
     }
     if (value === current.value) {
       prev.next = current.next;
-      this.tail = prev;
+      this._tail = prev;
       this._length--;
     }
   }
 
   removeAt(index) {
     if (index === 0) {
-      this.root = this.root.next;
+      this._root = this._root.next;
       this._length--;
       return;
     }
-    let prev = this.root;
-    let current = this.root.next;
+    let prev = this._root;
+    let current = this._root.next;
     let i = 1;
     while (current.next) {
       if (i === index) {
@@ -155,7 +155,7 @@ class List {
       current = current.next;
     }
     if (i === index) {
-      this.tail = prev;
+      this._tail = prev;
       prev.next = null;
       this._length--;
     }
@@ -163,7 +163,7 @@ class List {
 
   slice(from = 0, to = this.length) {
     let newList = new List();
-    let current = this.root;
+    let current = this._root;
     let i = 0;
     while (current) {
       if (i >= from && i < to) {
@@ -175,19 +175,19 @@ class List {
     return newList;
   }
 
-  ///tail needs fixing ----- ask KON
+  ///_tail needs fixing ----- ask KON
   drop(fun) {
-    if (!this.root) {
+    if (!this._root) {
       return;
     }
-    while (fun(this.root.value)) {
-      this.root = this.root.next;
+    while (fun(this._root.value)) {
+      this._root = this._root.next;
       this._length--;
-      if (!this.root) break;
+      if (!this._root) break;
     }
-    let prev = this.root;
-    if (this.root) {
-      let current = this.root.next;
+    let prev = this._root;
+    if (this._root) {
+      let current = this._root.next;
       while (current) {
         while (fun(current.value)) {
           prev.next = current.next;
@@ -195,7 +195,7 @@ class List {
           if (!current.next) break;
           current = current.next;
         }
-        this.tail = current;
+        this._tail = current;
         prev = current;
         current = current.next;
       }
@@ -204,10 +204,10 @@ class List {
 
   reduceLeft(fun, initialValue) {
     let result = initialValue;
-    let current = this.root;
-    if (arguments.length < 2 && this.root) {
-      result = this.root.value;
-      current = this.root.next;
+    let current = this._root;
+    if (arguments.length < 2 && this._root) {
+      result = this._root.value;
+      current = this._root.next;
     }
     while (current) {
       result = fun(result, current.value);
@@ -221,17 +221,17 @@ class List {
   }
 
   halfSplit3() {
-    if (!this.root) return;
+    if (!this._root) return;
     let secondHalf = new List();
-    secondHalf.tail = this.tail;
-    let slow = this.root;
-    let fast = this.root;
+    secondHalf._tail = this._tail;
+    let slow = this._root;
+    let fast = this._root;
     while (fast.next && fast.next.next) {
       fast = fast.next.next;
       slow = slow.next;
     }
-    this.tail = slow;
-    secondHalf.root = slow.next;
+    this._tail = slow;
+    secondHalf._root = slow.next;
     secondHalf._length = Math.floor(this._length / 2);
     this._length = Math.ceil(this._length / 2);
     slow.next = null;

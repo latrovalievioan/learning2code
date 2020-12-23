@@ -144,3 +144,32 @@ ul.list-preperties {
     position: fixed;
     width: 5em;
 }
+
+#controls div {
+    display: grid;
+    grid-template-columns: 45% 45%;
+}
+
+#controls div.insert-at {
+    grid-template-columns: 30% 30% 30%;
+}
+
+button.reverse {
+    width: 90%;
+}
+
+#controls div button, #controls button, #controls input {
+    background-color: black;
+    border: 1px solid white;
+    font-family: cursive;
+    color: white;
+}
+
+div#controls {
+    width: 409px;
+}
+
+#controls div button:hover, #controls button:hover, #controls input:hover {
+    background-color: #00000042;
+    color: black;
+}
