@@ -97,7 +97,7 @@ li.Node.highlighted {
     background-color: lightskyblue;
     color: black;
 }
-ul.list-preperties {
+ul.list-properties {
     background-color: black;
     width: 8em;
     height: 8em;
@@ -148,6 +148,7 @@ ul.list-preperties {
 #controls div {
     display: grid;
     grid-template-columns: 45% 45%;
+    height: 3em;
 }
 
 #controls div.insert-at {
@@ -156,6 +157,7 @@ ul.list-preperties {
 
 button.reverse {
     width: 90%;
+    height: 3em;
 }
 
 #controls div button, #controls button, #controls input {
@@ -172,4 +174,8 @@ div#controls {
 #controls div button:hover, #controls button:hover, #controls input:hover {
     background-color: #00000042;
     color: black;
+}
+main {
+    display: flex;
+    flex-direction: row-reverse;
 }

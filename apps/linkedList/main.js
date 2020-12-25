@@ -39,7 +39,7 @@ const renderList = (containerId, list) => {
   for (const child of [...container.children]) {
     child.remove();
   }
-  const listProperties = mkElem("ul", { class: "list-preperties" });
+  const listProperties = mkElem("ul", { class: "list-properties" });
   const tail = mkElem("li", { class: "tail" });
   tail.innerText = `List - tail: ${list.at(list.length - 1)}`;
   const head = mkElem("li", { class: "head" });
