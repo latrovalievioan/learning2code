@@ -5,7 +5,6 @@ const field = mkElem("input", { type: "text", class: "initial-input" });
 const button = mkElem("button", { class: "initial-button" });
 button.innerText = "Render List";
 let arr = [];
-
 const contextMenu = mkElem("div", { class: "context-menu" });
 const remove = mkElem("span", { class: "remove" });
 remove.innerText = "Remove";
@@ -52,35 +51,38 @@ const renderList = (containerId, list) => {
   const linkedList = mkElem("ol", { class: "linked-list" });
   const lis = list.toArray();
 
+  let currentLi;
+  remove.addEventListener("click", () => {
+    list.remove(currentLi.innerText);
+    currentLi.remove();
+    renderList(containerId, list);
+  });
+
+  changeValue.addEventListener("click", (e) => {
+    input.classList.remove("hidden");
+    input.style.top = `${e.clientY - 20}px`;
+    input.style.left = `${e.clientX - 20}px`;
+    input.addEventListener("change", () => {
+      input.classList.add("hidden");
+      for (let i = 0; i < list.length; i++) {
+        if (list.toArray()[i] === currentLi.innerText) {
+          console.log(input.value);
+          list.changeValueAt(i, input.value);
+          renderList(containerId, list);
+        }
+      }
+    });
+  });
   lis.forEach((x) => {
     const li = mkElem("li", { class: "Node" });
     li.innerText = x;
     linkedList.appendChild(li);
     li.addEventListener("contextmenu", (e) => {
+      currentLi = li;
       e.preventDefault();
       contextMenu.classList.remove("hidden");
       contextMenu.style.top = `${e.clientY - 20}px`;
       contextMenu.style.left = `${e.clientX - 20}px`;
-
-      remove.addEventListener("click", (e) => {
-        list.remove(li.innerText);
-        renderList(containerId, list);
-      });
-      changeValue.addEventListener("click", (e) => {
-        input.classList.remove("hidden");
-        input.style.top = `${e.clientY - 20}px`;
-        input.style.left = `${e.clientX - 20}px`;
-        for (let i = 0; i < list.length; i++) {
-          if (list.at(i) === li.innerText) {
-            input.addEventListener("change", () => {
-              input.classList.add("hidden");
-              list.removeAt(i);
-              list.insert(i, input.value);
-              renderList(containerId, list);
-            });
-          }
-        }
-      });
 
       insertAfter.addEventListener("click", (e) => {
         input.classList.remove("hidden");

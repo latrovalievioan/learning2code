@@ -237,4 +237,22 @@ class List {
     slow.next = null;
     return secondHalf;
   }
+
+  changeValueAt(index, value) {
+    let current = this._root;
+    let i = 0;
+    if (!current) {
+      return undefined;
+    }
+    while (current.next) {
+      if (index === i) {
+        current.value = value;
+      }
+      current = current.next;
+      i++;
+    }
+    if (i === index) {
+      current.value = value;
+    }
+  }
 }
