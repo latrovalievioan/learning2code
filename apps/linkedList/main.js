@@ -58,6 +58,12 @@ const renderList = (containerId, list) => {
     renderList(containerId, list);
   });
 
+  let newValue;
+
+  input.addEventListener("change", () => {
+    newValue = input.value;
+  });
+
   changeValue.addEventListener("click", (e) => {
     input.classList.remove("hidden");
     input.style.top = `${e.clientY - 20}px`;
@@ -66,13 +72,29 @@ const renderList = (containerId, list) => {
       input.classList.add("hidden");
       for (let i = 0; i < list.length; i++) {
         if (list.toArray()[i] === currentLi.innerText) {
-          console.log(input.value);
-          list.changeValueAt(i, input.value);
+          list.changeValueAt(i, newValue);
           renderList(containerId, list);
         }
       }
     });
   });
+
+  insertAfter.addEventListener("click", (e) => {
+    input.classList.remove("hidden");
+    input.style.top = `${e.clientY - 20}px`;
+    input.style.left = `${e.clientX - 20}px`;
+    input.addEventListener("change", () => {
+      input.classList.add("hidden");
+      for (let i = 0; i < list.length; i++) {
+        if (list.toArray()[i] === currentLi.innerText) {
+          list.insert(i + 1, newValue);
+          renderList(containerId, list);
+          currentLi = "";
+        }
+      }
+    });
+  });
+
   lis.forEach((x) => {
     const li = mkElem("li", { class: "Node" });
     li.innerText = x;
@@ -83,21 +105,6 @@ const renderList = (containerId, list) => {
       contextMenu.classList.remove("hidden");
       contextMenu.style.top = `${e.clientY - 20}px`;
       contextMenu.style.left = `${e.clientX - 20}px`;
-
-      insertAfter.addEventListener("click", (e) => {
-        input.classList.remove("hidden");
-        input.style.top = `${e.clientY - 20}px`;
-        input.style.left = `${e.clientX - 20}px`;
-        for (let i = 0; i < list.length; i++) {
-          if (list.at(i) === li.innerText) {
-            input.addEventListener("change", () => {
-              input.classList.add("hidden");
-              list.insert(i + 1, input.value);
-              renderList(containerId, list);
-            });
-          }
-        }
-      });
 
       insertBefore.addEventListener("click", (e) => {
         input.classList.remove("hidden");
