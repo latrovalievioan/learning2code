@@ -259,6 +259,7 @@ button.addEventListener("click", () => {
     child.remove();
   }
   const list = List.from(arr);
+  window._list = list;
   renderList("linked-list", list);
   renderControls("controls", list);
 });
