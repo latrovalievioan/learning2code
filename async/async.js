@@ -1,11 +1,10 @@
-const sleep = (milliseconds) => {
-  let promise = new Promise((resolve) => {
-    setTimeout(resolve, milliseconds);
-  });
+// const sleep = (milliseconds) => {
+//   let promise = new Promise((resolve, reject) => {
+//     setTimeout(resolve, milliseconds);
+//   });
+//   return promise;
+// };
 
-  promise.then(() => {
-    console.log("resolved successfuly");
-  });
-};
+// sleep(9000).then(() => console.log("zdrawei kote"));
 
-sleep(9000);
+setInterval(() => console.log("koko e krasiv"), 1000);
