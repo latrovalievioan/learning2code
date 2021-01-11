@@ -7,14 +7,14 @@
 
 // sleep(9000).then(() => console.log("zdrawei kote"));
 
-// setInterval(() => console.log("koko e krasiv"), 1000);
+setInterval(() => console.log("koko e krasiv"), 1000);
 
 const fs = require("fs");
 const { resolve } = require("path");
-// fs.readFile("./test.js", "utf-8", (err, data) => {
-//   if (err) throw err;
-//   console.log(data);
-// });
+fs.readFile("./test.js", "utf-8", (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
 
 const readFilePromise = (file) =>
   new Promise((resolve, reject) => {
@@ -26,4 +26,4 @@ const readFilePromise = (file) =>
     });
   });
 
-readFilePromise("./test.js").then((data) => console.log(data));
+readFilePromise("./test.js").then((d) => console.log(d));
