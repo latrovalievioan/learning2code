@@ -9,11 +9,20 @@ const renderTodos = (containerId) => {
         const name = mkElem("div", { class: "name" });
         const body = mkElem("div", { class: "body" });
         const date = mkElem("div", { class: "date" });
-        const isCompleted = mkElem("div", { class: "is-completed" });
+        const completeButton = mkElem("img", {});
+        completeButton.addEventListener("click", () => {
+          completeButton.setAttribute("src", "./images/checked.png");
+        });
         body.innerHTML = (todo.text || "text").split(/\b/gi).slice(1).join("");
         name.innerHTML = (todo.text || "todo").split(/\b/gi)[0];
         date.innerHTML = todo.createdAt || "date";
-        isCompleted.innerHTML = todo.isCompleted;
+        if (todo.isCompleted) {
+          completeButton.setAttribute("class", "completed");
+          completeButton.setAttribute("src", "./images/checked.png");
+        } else {
+          completeButton.setAttribute("class", "noCompleted");
+          completeButton.setAttribute("src", "./images/timer.png");
+        }
         console.log(todo);
         const header = mkElem("div", { class: "header" });
         header.appendChild(name);
@@ -21,7 +30,7 @@ const renderTodos = (containerId) => {
         li.appendChild(header);
         li.appendChild(body);
 
-        li.appendChild(isCompleted);
+        li.appendChild(completeButton);
         list.appendChild(li);
       });
     });

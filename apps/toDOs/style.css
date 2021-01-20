@@ -9,7 +9,7 @@ li.todo {
     min-height: 200px;
     width: 235px;
     justify-content: space-between;
-    background-color: black;
+    background-color: #000000cf;
     color: white;
     font-family: cursive;
 }
@@ -47,4 +47,9 @@ background: linear-gradient(90deg, rgba(198,135,188,1) 0%, rgba(48,123,212,1) 10
 .body {
     word-break: break-all;
     text-align: center;
+}
+
+img.noCompleted {
+    width: 30px;
+    align-self: center;
 }
