@@ -28,7 +28,7 @@ const renderUser = (user, albums) => {
   button.addEventListener("click", () => {
     r();
   });
-  button.innerHTML = "nazad";
+  button.innerHTML = "nazad mome kalino";
   container.appendChild(button);
 };
 
