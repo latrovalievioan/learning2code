@@ -15,9 +15,12 @@ const renderTodos = (containerId) => {
         date.innerHTML = todo.createdAt || "date";
         isCompleted.innerHTML = todo.isCompleted;
         console.log(todo);
-        li.appendChild(name);
+        const header = mkElem("div", { class: "header" });
+        header.appendChild(name);
+        header.appendChild(date);
+        li.appendChild(header);
         li.appendChild(body);
-        li.appendChild(date);
+
         li.appendChild(isCompleted);
         list.appendChild(li);
       });

@@ -1,0 +1,50 @@
+li.todo {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 20px;
+    min-height: 200px;
+    width: 235px;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    font-family: cursive;
+}
+
+.todo .header .date {
+    font-family: auto;
+}
+
+ul.todo-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 3px solid #ffffff52;
+}
+
+.date {
+    font-size: 11px;
+    padding-left: 69px;
+    padding-top: 2px;
+}
+
+.is-completed {
+    align-self: center;
+}
+
+body {
+    background: rgb(198,135,188);
+background: linear-gradient(90deg, rgba(198,135,188,1) 0%, rgba(48,123,212,1) 100%);
+}
+
+.body {
+    word-break: break-all;
+    text-align: center;
+}
