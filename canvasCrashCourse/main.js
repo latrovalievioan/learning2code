@@ -119,3 +119,90 @@ const ctx = canvas.getContext("2d");
 // };
 
 // update();
+
+const player = {
+  w: 60,
+  h: 60,
+  x: 20,
+  y: 200,
+  speed: 5,
+  dx: 0,
+  dy: 0,
+};
+const char = document.getElementById("source");
+
+const drawPlayer = (player) => {
+  ctx.drawImage(char, player.x, player.y, player.w, player.h);
+};
+
+const clear = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
+const newPos = () => {
+  player.x += player.dx;
+  player.y += player.dy;
+  detectWalls();
+};
+const detectWalls = () => {
+  if (player.x < 0) {
+    player.x = 0;
+  } else if (player.x + player.w > canvas.width) {
+    player.x = canvas.width - player.w;
+  } else if (player.y < 0) {
+    player.y = 0;
+  } else if (player.y + player.h > canvas.height) {
+    player.y = canvas.height - player.h;
+  }
+};
+
+const update = () => {
+  clear();
+  drawPlayer(player);
+  newPos();
+  requestAnimationFrame(update);
+};
+
+const moveUp = () => {
+  player.dy = -player.speed;
+};
+const moveRight = () => {
+  player.dx = player.speed;
+};
+const moveDown = () => {
+  player.dy = player.speed;
+};
+const moveLeft = () => {
+  player.dx = -player.speed;
+};
+
+const keydown = (e) => {
+  e.preventDefault();
+  if (e.key === "ArrowUp") {
+    moveUp();
+  } else if (e.key === "ArrowRight") {
+    moveRight();
+  } else if (e.key === "ArrowDown") {
+    moveDown();
+  } else if (e.key === "ArrowLeft") {
+    moveLeft();
+  }
+};
+const keyup = (e) => {
+  e.preventDefault();
+  if (
+    e.key === "ArrowUp" ||
+    e.key === "ArrowRight" ||
+    e.key === "ArrowDown" ||
+    e.key === "ArrowLeft"
+  ) {
+    player.dx = 0;
+    player.dy = 0;
+  }
+};
+
+update();
+
+document.addEventListener("keydown", keydown);
+
+document.addEventListener("keyup", keyup);
