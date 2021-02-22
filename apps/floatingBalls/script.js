@@ -58,54 +58,67 @@ class Square {
   }
 }
 
-const ball = new Ball(100, 400, 20, 5, 4);
-const ball2 = new Ball(600, 400, 20, -6, 3);
-const square = new Square(100, 100, 30, 7, 6);
-const square2 = new Square(600, 100, 30, -3, 8);
-const ball3 = new Ball(100, 250, 20, 6, 1);
-const square3 = new Square(600, 250, 30, -1, 4);
+const square = new Square(5, 5, 20, 5, 5);
+const square2 = new Square(125, 125, 20, -5, -5);
 
-const figures = [ball, ball2, ball3, square, square2, square3];
+const figures = [square, square2];
 
-const collide = (figure1, figure2) => {
-  const distanceX = figure1.x - figure2.x;
-  const distanceY = figure1.y - figure2.y;
-  let left;
-  let right;
-  if (figure1.figure === "square") {
-    left = figure1.side / 2;
-  } else {
-    left = figure1.radius;
-  }
-  if (figure2.figure === "square") {
-    right = figure2.side / 2;
-  } else {
-    right = figure2.radius;
-  }
-  const radiSum = left + right;
+const collideCircles = (circle1, circle2) => {
+  const distanceX = circle1.x - circle2.x;
+  const distanceY = circle1.y - circle2.y;
+  const radiSum = circle1.radius + circle2.radius;
   if (distanceX * distanceX + distanceY * distanceY <= radiSum * radiSum) {
-    figure1.sx *= -1;
-    figure2.sx *= -1;
-    figure1.sy *= -1;
-    figure2.sy *= -1;
+    circle1.sx *= -1;
+    circle2.sx *= -1;
+    circle1.sy *= -1;
+    circle2.sy *= -1;
   }
 };
 
+const collideSquares = (square1, square2) => {
+  const s1Side = square1.side / 2;
+  const s2Side = square2.side / 2;
+  console.log(square1, square2);
+  if (
+    Math.abs(square1.x + s1Side - (square2.x + s2Side)) <= s1Side + s2Side &&
+    Math.abs(square1.y + s1Side - (square2.y + s2Side)) <= s1Side + s2Side
+  ) {
+    square1.sx *= -1;
+    square1.sy *= -1;
+    square2.sx *= -1;
+    square2.sy *= -1;
+  }
+};
+const collideCS = (square, circle) => {
+  const squareCenter = square.side / 2;
+  if (Math.abs(circle.x - squareCenter)) {
+  }
+};
+
+let frame = 0;
+
 const update = () => {
+  if (frame++ % 1 !== 0) {
+    requestAnimationFrame(update);
+    return;
+  }
+
+  //   detect balls
+  for (let i = 0; i < figures.length - 1; i++) {
+    for (let j = i + 1; j < figures.length; j++) {
+      if (figures[i].figure === "circle" && figures[j].figure === "circle")
+        collideCircles(figures[i], figures[j]);
+      else if (figures[i].figure === "square" && figures[j].figure === "square")
+        collideSquares(figures[i], figures[j]);
+      console.log("kurlijyn");
+    }
+  }
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   figures.forEach((figure) => {
     figure.changePos();
     figure.drawFigure();
   });
 
-  //   detect balls
-  for (let i = 0; i < figures.length - 1; i++) {
-    for (let j = i + 1; j < figures.length; j++) {
-      collide(figures[i], figures[j]);
-    }
-  }
-
   requestAnimationFrame(update);
 };
-
 update();
