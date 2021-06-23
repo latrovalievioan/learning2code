@@ -70,10 +70,6 @@ const bfs = () => {
     neighbors.forEach((n) => {
       const nRow = n.r;
       const nCol = n.c;
-
-      if (nRow === end.r && nCol === end.c) {
-        console.log('yay');
-      }
       if (
         nRow < 0 ||
         nRow > emptyMatrix.length - 1 ||
@@ -96,28 +92,25 @@ const bfs = () => {
       q.push(n);
     });
   }
+
+  const path = [];
+
+  let currentKey = `${end.r}x${end.c}`;
+
+  let current = emptyMatrix[end.r][end.c];
+
+  while (current) {
+    path.push(current);
+
+    const { key, cell } = visited[currentKey];
+
+    current = cell;
+    currentKey = key;
+  }
+  console.log(path.length);
+  console.log(path.reverse());
 };
 
 bfs();
 
 console.table(emptyMatrix);
-
-// const findPossiblePaths = (size, startR, startC, emptyMatrix) => {
-//   emptyMatrix[startR][startC] = 'started';
-
-//   for (path in paths) {
-//     const pathCoordinates = paths[path];
-//     const pathName = path;
-//     const pathR = pathCoordinates.r;
-//     const pathC = pathCoordinates.c;
-//     const newR = startR + pathR;
-//     const newC = startC + pathC;
-
-//     if (newR < size && newC < size && newR >= 0 && newC >= 0) {
-//       emptyMatrix[startR + pathR][startC + pathC] = pathName;
-//     }
-//   }
-//   return emptyMatrix;
-// };
-
-// console.table(findPossiblePaths(size, startR, startC, emptyMatrix));
