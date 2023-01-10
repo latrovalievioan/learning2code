@@ -1,13 +1,14 @@
 const arr = [1,2,3,4];
 
-type SearchResult = 
-  | number
-  | 'Not Found'
+export const bSearch = (
+  arr: number[], 
+  n: number, 
+  s: number = 0, 
+  e: number = arr.length - 1
+): number => {
+  if(s > e) return -1
 
-export const bSearch = (arr: number[], n: number, s: number, e: number): SearchResult => {
-  if(s > e) return 'Not Found'
-
-  const middle = Math.floor((s + e) / 2);
+  const middle = Math.floor(s + ((e - s) / 2));
 
   if(arr[middle] === n) return middle
   
@@ -17,4 +18,4 @@ export const bSearch = (arr: number[], n: number, s: number, e: number): SearchR
 }
 
 
-console.log(bSearch(arr, 4, 0, arr.length - 1))
+console.log(bSearch(arr, 4))

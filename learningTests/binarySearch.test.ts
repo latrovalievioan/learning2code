@@ -1,39 +1,55 @@
-const { describe, expect, test } = require('@jest/globals');
 const { bSearch } = require('./binarySearch');
 
 describe('Binary Search Alg', () => {
   const arr = [0,1,2,3,4]
-  const empty = []
-  const single = [1]
-  const two = [0,25]
 
   test('BSearch is defined', () => {
     expect(bSearch).toBeDefined()
   })
 
   test('Finding the first element of a sorted list', () => {
-      expect(bSearch(arr, 0, 0, arr.length - 1)).toBe(0)
+      expect(bSearch(arr, 0)).toBe(0)
   })
 
   test('Finding the last element of a sorted list', () => {
-    expect(bSearch(arr, 4, 0, arr.length - 1)).toBe(4)
+    expect(bSearch(arr, 4)).toBe(4)
   })
 
   test('Not finding a value', () => {
-    expect(bSearch(arr, 12, 0, arr.length - 1)).toBe('Not Found')
+    expect(bSearch(arr, 12)).toBe(-1)
   })
 
   test('Empty list should return Not Found', () => {
-    expect(bSearch(empty, 1, 0, empty.length - 1)).toBe('Not Found')
+    expect(bSearch([], 1)).toBe(-1)
   })
   
   test('Finds a value in a list with a single value', () => {
-    expect(bSearch(single, 1, 0, single.length - 1)).toBe(0)
+    const single = [1]
+    expect(bSearch(single, 1)).toBe(0)
   })
 
   test('Finds values in list of two values', () => {
-    expect(bSearch(two, 0, 0, two.length - 1)).toBe(0)
-    expect(bSearch(two, 25, 0, two.length - 1)).toBe(1)
+    const two = [0,25]
+    expect(bSearch(two, 0)).toBe(0)
+    expect(bSearch(two, 25)).toBe(1)
   })
 
+  test('Works with repeating numbers', () => {
+    const arr = [1,2,2,2,2,3]
+    expect(bSearch(arr, 2)).toBe(2)
+  })
+
+  test('Works with only repeating numbers', () => {
+    const arr = [2,2,2,2,2]
+    expect(bSearch(arr,2)).toBe(2)
+  })
+
+  test('Element on returned index position is the same as element searched', () => {
+    expect(arr[bSearch(arr, 4)]).toBe(4)
+  })
+  
+  test('Works with ranges', () => {
+    expect(bSearch(arr, 4, 2, 4)).toBe(4)
+    expect(bSearch(arr, 4, 1, 3)).toBe(-1)
+  })
 });
