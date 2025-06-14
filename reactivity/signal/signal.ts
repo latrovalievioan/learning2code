@@ -18,13 +18,7 @@ class Signal<T> {
     }
 
     get value() {
-        if(currentEffect) {
-            if(!usages.has(this)) {
-                usages.set(this, [])
-            } 
-
-            usages.get(this).push(currentEffect)
-        }
+        this.#track();
 
         return this._value;
     }
@@ -32,13 +26,27 @@ class Signal<T> {
     set value(newValue: T) {
         this._value = newValue;
 
+        this.#exec()
+    }
+
+    #track() {
+        if (!usages.has(this)) {
+            usages.set(this, [])
+        }
+
+        if (currentEffect) {
+            usages.get(this).push(currentEffect)
+        }
+    }
+
+    #exec() {
         usages.get(this)?.forEach(cb => cb())
     }
 }
 
 const signal = <T>(value: T) => {
     return new Signal(value)
-} 
+}
 
 const x = signal(100)
 
